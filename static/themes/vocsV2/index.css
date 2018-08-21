@@ -1,0 +1,199 @@
+/*左侧*/
+
+.indexleft{
+    width: 15.2%;
+    height: 100%;
+    box-sizing: border-box;
+    background: #2D3E52;
+}
+.leftitem{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-flow:row;
+
+}
+.blueborder{
+    width: 8px;
+    height: 100%;
+    background: #1A1D22;
+}
+.itemR{
+    flex: 1;
+    height: 100%;
+}
+.checkact{
+    background: #1A1D22;
+}
+.checkbor{
+    background: #019AFF;
+}
+.icon{
+    width: 38%;
+    height: 41%;
+}
+.icon  img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.iconbox{
+    width: 75px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+
+}
+.itemR p{
+    float: left;
+    color: #fff;
+    line-height: 60px;
+    font-size: 16px;
+}
+
+
+/*右侧*/
+.indexright{
+    flex: 1;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow:column;
+
+}
+
+.rightTop{
+    width: 100%;
+    height: 60px;
+    background: #FFFFFF;
+}
+.rightTop p{
+    line-height: 60px;
+    font-size: 22px;
+    padding-left: 26px;
+}
+.rightbottom{
+    flex: 1;
+    background: #EFEFEF;
+    display: flex;
+    flex-flow:row;
+
+}
+
+.bottomL{
+    width: 395px;
+    height: 100%;
+}
+.bottomR{
+    flex: 1;
+    height: 100%;
+    box-sizing: border-box;
+}
+.bottomLbox{
+    width: 89%;
+    height: 347px;
+    box-sizing: border-box;
+    border: 1px solid #E3E3E3;
+    background:#fff;
+    border-radius: 8px ;
+    margin: 13px auto;
+    display: flex;
+    flex-flow: column;
+}
+.btmloxT{
+    width: 100%;
+    height: 53px;
+    border-bottom: 1px solid #D0D0D0;
+    box-sizing: border-box;
+}
+
+.btmloxTbor{
+    width: 43px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+}
+.btmloxTbor div{
+    width: 6px;
+    height: 21px;
+    background: #009CFD;
+}
+.btmloxT p{
+    line-height: 53px;
+    font-size: 20px;
+    color: #696969;
+    float: left;
+}
+
+.btmloxB{
+    width: 82%;
+    flex: 1;
+    margin: 0 auto;
+    /*background: yellowgreen;*/
+}
+.stratF{
+    font-size: 19px;
+    color: #6A6A6A;
+    padding-top: 38px;
+}
+.endF{
+    font-size: 19px;
+    color: #6A6A6A;
+}
+.startTime,.endTime{
+    width: 100%;
+    height: 37px;
+    box-sizing: border-box;
+    border: 1px solid #E4E4E4;
+    margin-top: 13px;
+    margin-bottom: 17px;
+}
+.find{
+    width: 100%;
+    height:50px;
+    background: #019AFF;
+    color: #fff;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: none;
+    font-size: 18px;
+}
+
+/*选择时间*/
+.mydate, .ui-mydate, .date{
+    background-image: url(ui-images/dateicon.png) !important;
+    background-position: center right 6px !important;
+}
+
+/*改写表格*/
+
+.datagrid-htable tbody{
+    background: #F6F6F6;
+}
+.datagrid-htable  tbody tr{
+    border: none;
+
+}
+.datagrid-header td, .datagrid-body td, .datagrid-footer td{
+    border: none;
+    border-bottom: 1px solid #D2D2D2;
+    height: 62px;
+}
+
+.datagrid-header .datagrid-cell span{
+    font-size: 19px;
+}
+.datagrid-cell, .datagrid-cell-group, .datagrid-header-rownumber, .datagrid-cell-rownumber{
+    font-size: 16px;
+}
+.datagrid .panel-body{
+    border: none!important;
+}
+.datagrid-row-selected,.datagrid-row-over{ background-color:#fff;  }
+
+/*standardRateItem页面*/

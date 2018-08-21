@@ -1,0 +1,40 @@
+.webuploader-container {
+	position: relative;
+}
+.webuploader-element-invisible {
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px,1px,1px,1px);
+	width:100%;
+	height:100%;
+	line-height:100%;
+	border:none;
+	background-color:transparent;
+	text-indent: -1000em;
+}
+.webuploader-pick {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+/*	background: #0064c2;
+	padding: 0 12px;
+	color: #fff;
+	text-align: center;
+	border-radius: 3px;*/
+	overflow: hidden;
+}
+.webuploader-pick-hover {
+	/*background: #0e53c2;*/
+}
+
+.webuploader-pick-disable {
+	opacity: 0.6;
+	pointer-events:none;
+}
+
+.webuploader-container{
+	height:32px;
+}
+.webuploader-container label{
+	height:32px !important;
+}

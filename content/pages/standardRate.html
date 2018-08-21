@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>达标率</title>
+    <link rel="stylesheet" href="../../static/themes/vocsV2/main.css">
+
+</head>
+<style>
+    body ,html{
+        display: flex;
+        flex-flow:column;
+    }
+
+</style>
+<body>
+<div class="rightTop">
+    <p>天津市达标率统计</p>
+</div>
+
+<div class="rightbottom">
+    <div class="bottomL">
+        <div class="bottomLbox">
+            <div class="btmloxT">
+                <div class="btmloxTbor"><div></div></div>
+                <p>查询条件</p>
+            </div>
+
+            <div class="btmloxB">
+                <p class="stratF">开始时间：</p>
+                <input type="text" class="startTime">
+                <p class="endF">结束时间：</p>
+                <input type="text" class="endTime">
+                <button class="find">查询</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="bottomR" style="padding-top: 15px">
+        <table id="tt" height="98%" width="100%" ></table>
+    </div>
+</div>
+
+<script src="../../static/js/V2.4/base_common.js"></script>
+<script src="../../static/js/V2.4/common.min.js"></script>
+<script>
+    $(".startTime").mydatePicker({
+
+        onSelect:function (date) {
+
+        }
+    });
+
+    $(".endTime").mydatePicker({
+
+        onSelect:function (date) {
+
+        }
+    });
+
+    var jqTreeGrid = $('#tt').datagrid({
+        method: "GET",
+        url: '../11.json',
+        fitColumns: true,
+        fixed:true,
+        columns: [[
+            {title: '行政区划', field: 'f1', width: $(this).width() * 0.05, align: 'center',},
+            {title: '超标数/总数', field: 'f2', width: $(this).width() * 0.05,align: 'center',formatter:function (value, row, index) {
+                return '<span style="color: #FF534C">'+value+'</span>'
+            }},
+            {title: '达标率', field: 'f3', width: $(this).width() * 0.1, align: 'center',formatter:function (value, row, index) {
+                return '<span style="color: #33AB18">'+value+'</span>'
+            }},
+        ]],
+        onDblClickRow:function (index,row) {
+
+        },
+        onLoadSuccess: function (data, response) {
+            $(".datagrid-header-rownumber").text('序号')
+        },
+        onClickRow:function (index, row) {
+            parent.$("#stand").attr('src','http://www.baidu.com')
+        }
+    });
+
+</script>
+</body>
+</html>

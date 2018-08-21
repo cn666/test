@@ -1,0 +1,9 @@
+﻿<jscompress public="http://www.jscompress.cn/" command="import-combineset">
+<combinefile path="main.all.css">
+    <css_fixedrelativeurl value="1" />
+    <auto value="0" />
+    <sourcefile path=".\ui.css" />
+    <sourcefile path=".\pub.css" />
+    <sourcefile path=".\project.css" />
+</combinefile>
+</jscompress>

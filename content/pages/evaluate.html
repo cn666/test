@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>超标评价</title>
+    <link rel="stylesheet" href="../../static/themes/vocsV2/main.css">
+    <link rel="stylesheet" href="../../static/themes/vocsV2/evaluate.css">
+    <style>
+        body,html{
+            display: flex;
+            flex-flow: column;
+            background: #EFEFEF;
+        }
+    </style>
+</head>
+<body>
+<div class="rightTop">
+    <p>超标评价</p>
+</div>
+
+<div class="evalu">
+        <div class="evalufind">
+            <div class="evalfindTime">
+                <div class="evalfindTimeT">
+                    <div class="blueline"></div>
+                    <p>评价条件</p>
+                </div>
+
+                <!--查询时间-->
+                <div class="evalfindTimeD">
+                    <div class="evaltimebox">
+                        <p class="evalstartFont">开始时间：</p>
+                        <input type="text" class="evalstartTime">
+                        <p class="evalendFont">结束时间：</p>
+                        <input type="text" class="evalendTime">
+                    </div>
+                </div>
+
+                <!--污染物-->
+                <div class="evalwrw">
+                    <div class="evalwrwbox">
+                        <div class="evalwrwlist">
+                            <div class="evalwrwitem"><span class="yuan"></span><span class="wrwfont">化学需氧量</span></div>
+                            <div class="evalwrwitem">评价标准值：</div>
+                            <div class="evalwrwitem"><input type="text" class="wrwtext"><span class="fon16">mg/l</span></div>
+                        </div>
+
+                        <div class="evalwrwlist">
+                            <div class="evalwrwitem"><span class="yuan"></span><span class="wrwfont">氨氮</span></div>
+                            <div class="evalwrwitem">评价标准值：</div>
+                            <div class="evalwrwitem"><input type="text" class="wrwtext"><span class="fon16">mg/l</span></div>
+                        </div>
+
+                        <div class="evalwrwlist">
+                            <div class="evalwrwitem"><span class="yuan coleaa"></span><span class="wrwfont">烟尘</span></div>
+                            <div class="evalwrwitem">评价标准值：</div>
+                            <div class="evalwrwitem"><input type="text" class="wrwtext"><span class="fon16">mg/l</span></div>
+                        </div>
+
+                        <div class="evalwrwlist">
+                            <div class="evalwrwitem"><span class="yuan coleaa"></span><span class="wrwfont">二氧化硫</span></div>
+                            <div class="evalwrwitem">评价标准值：</div>
+                            <div class="evalwrwitem"><input type="text" class="wrwtext"><span class="fon16">mg/l</span></div>
+                        </div>
+
+                        <div class="evalwrwlist">
+                            <div class="evalwrwitem"><span class="yuan coleaa"></span><span class="wrwfont">氮氧化合物</span></div>
+                            <div class="evalwrwitem">评价标准值：</div>
+                            <div class="evalwrwitem"><input type="text" class="wrwtext"><span class="fon16">mg/l</span></div>
+                        </div>
+
+
+                        <div class="btn">评价</div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="evalRdata">
+            <table id="evalRdata" height="98%" width="100%" ></table>
+        </div>
+</div>
+
+
+<script src="../../static/js/V2.4/base_common.js"></script>
+<script src="../../static/js/V2.4/common.min.js"></script>
+<script>
+    $(".evalstartTime").mydatePicker({
+
+        onSelect:function (date) {
+
+        }
+    });
+
+    $(".evalendTime").mydatePicker({
+
+        onSelect:function (date) {
+
+        }
+    });
+
+
+    $('#evalRdata').datagrid({
+        method: "GET",
+        url: '../11.json',
+        fitColumns: true,
+        singleSelect:true,
+        fixed:true,
+        columns: [[
+            {title: '行政区划', field: 'f1', width: $(this).width() * 0.06, align: 'center',styler:function (value,row,index) {
+                return 'color:#858585';
+            }},
+            {title: '超标数/总数', field: 'f2', width: $(this).width() * 0.1,align: 'center',formatter:function (value, row, index) {
+                return '<span style="color: #FF534C">'+value+'</span>'
+            }},
+            {title: '达标率', field: 'f3', width: $(this).width() * 0.1, align: 'center',formatter:function (value, row, index) {
+                return '<span style="color: #33AB18">'+value+'</span>'
+            }},
+        ]],
+        onDblClickRow:function (index,row) {
+
+        },
+        onLoadSuccess: function (data, response) {
+            $(".datagrid-header-rownumber").text('序号')
+        },
+        onClickRow:function (index, row) {
+
+        }
+    });
+</script>
+</body>
+</html>

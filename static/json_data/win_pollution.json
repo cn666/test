@@ -1,0 +1,22 @@
+[
+  {
+    "value":"CO",
+    "text":"CO"
+  },
+  {
+    "value":"SO2",
+    "text":"SO2"
+  },
+  {
+    "value":"NO2",
+    "text":"NO2"
+  },
+  {
+    "value":"O3",
+    "text":"O3"
+  },
+  {
+    "value":"NH3",
+    "text":"NH3"
+  }
+]

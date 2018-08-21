@@ -1,0 +1,625 @@
+
+body, html {
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    font-family: "微软雅黑", Arial, Verdana, Helvetica, sans-serif;
+
+}
+
+ul {
+    list-style: none;
+}
+
+.platform-head {
+    background: url('images/nav-bg.png') repeat-x;
+    height: 40px;
+    position: relative;
+}
+
+.p-nav {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    position: absolute;
+    cursor: pointer;
+}
+
+.p-nav-menu {
+    background: url('images/p-nav-icon1.png') no-repeat;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+}
+
+.p-nav .p-nav-menu:hover {
+    background: url('images/p-nav-icon1.png') no-repeat;
+    background-color: #0085E3;
+}
+
+
+
+#menus {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0px;
+    z-index: 55;
+    width: 200px;
+    width: 220px;
+
+    z-index: 5;
+    height: 290px;
+    overflow: hidden;
+    /*max-height: 550px;
+    overflow-y: auto;*/
+}
+#menus>ul.jf-menu{
+    border-radius: 0 5px 5px 5px;
+    border: 1px solid #b7b7b7;
+    border-top: none;
+}
+#menus>ul.jf-menu:last-child{
+    border-bottom: none;
+}
+
+.p-nav:hover #menus {
+    display: block;
+}
+
+.logo {
+    position: absolute;
+    top: 140px;
+    left: 400px;
+    width: 368px;
+    height: 47px;
+    z-index: -1;
+}
+
+.tools {
+    position: absolute;
+    right: 0;
+    display: block;
+    height: 40px;
+    width: 90px;
+    text-align: right;
+}
+
+.tools span {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+}
+
+.tools span.on {
+    background-color: #0085E3;
+}
+
+.tools .user {
+    background: url('images/p-nav-icon2.png') no-repeat;
+}
+
+.tools span:hover {
+    background-color: #0085E3;
+}
+
+.tools .notice {
+    background: url('images/p-nav-icon3.png') no-repeat;
+    cursor: pointer;
+}
+
+#tabBoxMenus {
+    height: 40px;
+    position: absolute;
+    top: 0;
+    left: 40px;
+    right: 80px;
+}
+
+#tabBoxMenus span {
+    height: 40px;
+    padding: 0 20px;
+    line-height: 40px;
+    display: inline-block;
+    color: #8d8d8d;
+    border-left: 1px solid #090909;
+    font-size: 14px;
+    cursor: pointer;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+#tabBoxMenus a:hover {
+    color: white;
+    background-color: #363636;
+    /*background-color: #0085e3;*/
+}
+
+#tabBoxMenus .on {
+    color: white;
+    background-color: #363636;
+}
+
+#tabBoxMenus .close {
+    width: 15px;
+    height: 15px;
+    float: right;
+    margin-top: 5px;
+    margin-right: -15px;
+    display: inline-block;
+    background: url("images/close.png");
+    background-position: 0 0;
+    text-indent: -1000em;
+}
+
+#tabBoxMenus span:hover .close {
+    background-position: 0 -15px;
+}
+
+#tabBoxMenus .all {
+    height: 40px;
+    padding: 0 20px;
+    line-height: 40px;
+    display: inline-block;
+    color: #8d8d8d;
+    border-left: 1px solid #090909;
+    font-size: 14px;
+    cursor: pointer;
+    box-sizing: border-box;
+    width: 75px;
+    background: url('images/p-nav-icon4.png') right no-repeat;
+    /*background-color: #363636;*/
+}
+
+#tabBoxMenus .all:hover {
+    background: url('images/p-nav-icon4-on.png') right no-repeat;
+    color: #fff;
+    background-color: #0085e3;
+}
+
+.tab-box-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: none;
+    z-index: 1;
+}
+
+.content {
+    position: absolute;
+    top: 40px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#tabBoxContents .on {
+    display: block;
+}
+
+#cid-home {
+    z-index: 0;
+    display: block
+}
+
+.frameBox {
+    width: 100%;
+    height: 100%;
+    background-color: #f3f3f3;
+}
+
+.drop-menu {
+    position: relative;
+}
+
+.drop-menu-content {
+    position: absolute;
+    width: 170px;
+    max-height: 500px;
+    overflow-y: auto;
+    top: 40px;
+    right: 0px;
+    border: 1px solid #dddddd;
+    border-top: 0;
+    border-radius: 5px 0 5px 5px;
+    background-color: white;
+    z-index: 99;
+    box-sizing: border-box;
+    display: none;
+    background-color: white;
+    text-align: left;
+}
+
+.drop-menu-content a {
+    width: 100%;
+    display: block !important;
+    height: 40px !important;
+    line-height: 40px;
+    overflow: hidden;
+    border-top: 1px solid #ddd;
+    border-left: none !important;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 12px;
+    color: #838383;
+    text-decoration: none;
+    overflow: hidden;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.drop-menu-content a:hover {
+    background-color: #e5e5e5 !important;
+    color: #838383 !important;
+}
+
+.drop-menu:hover .drop-menu-content {
+    display: block;
+}
+
+.user {
+    cursor: pointer
+}
+
+.user-icon {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.user-menu {
+    background: url("images/p-adm1.png");
+}
+
+.user-set {
+    background: url("images/p-adm2.png");
+}
+
+.user-out {
+    background: url("images/p-adm3.png");
+}
+
+/*磁贴桌面*/
+
+.desktop-body {
+    width: 870px;
+    height: 330px;
+    position: relative;
+    color: white;
+    /*border: 1px solid #ddd;*/
+    line-height: 1.5;
+    font-size: 12px;
+}
+
+.desktop-body a {
+    color: #fff;
+}
+
+.bookmark {
+    position: relative;
+    display: block;
+    float: left;
+    border-radius: 4px;
+    height: 150px;
+    margin: 7.5px;
+    background: url("images/magnet-bg.png") repeat-x;
+    cursor: pointer;
+    -moz-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
+}
+
+.bookmark:hover {
+    -moz-box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.6);
+}
+
+.bg-orange {
+    background-position: 0 0;
+}
+
+.bg-green {
+    background-position: 0 -300px;
+}
+
+.bg-blue {
+    background-position: 0 -450px;
+}
+
+.bg-purple {
+    background-position: 0 -150px;
+}
+
+.bg-Bblue {
+    background-position: 0 -600px;
+}
+
+.bg-Bgreen {
+    background-position: 0 -750px;
+}
+
+.bg-yellow {
+    background-position: 0 -900px;
+}
+
+.bookmark-cover {
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
+    text-align: center;
+    line-height: 150px;
+}
+
+.bookmark-title {
+    position: absolute;
+    font-size: 16px;
+    color: white;
+    left: 16px;
+    top: 30px;
+}
+
+.bookmark-content {
+    position: absolute;
+    top: 72px;
+    left: 16px;;
+}
+
+.bookmark-icon {
+    width: 52px;
+    height: 52px;
+    position: absolute;
+    right: 16px;
+    top: 30px;
+}
+
+.bookmark-items {
+    position: absolute;
+    top: 85px;
+    bottom: 5px;
+    height: 50px;
+    width: 100%;
+    list-style: none;
+    overflow: hidden;
+    padding: 0;
+}
+
+.bookmark-items li {
+    width: 240px;
+    height: 22px;
+    line-height: 22px;;
+    padding-left: 16px;
+}
+
+/*theme-0   start*/
+.bmt-0 {
+    width: 275px;
+}
+
+.bmt-1 {
+    width: 130px;
+}
+
+.bmt-1 .bookmark-title {
+    top: 100px;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    padding: 0;
+}
+
+.bmt-1 .bookmark-icon {
+    right: 40px;
+}
+
+.bmt-2 {
+    width: 130px;
+}
+
+.bmt-2 .bookmark-title {
+    top: 30px;
+    width: 100%;
+    left: auto;
+    right: 30px;;
+    text-align: right;
+    padding: 0;
+}
+
+.bmt-2 .bookmark-icon {
+    top: auto;
+    right: auto;
+    bottom: 10px;
+    left: 10px;
+}
+
+.bmt-3 {
+    width: 275px;
+}
+
+.bmt-3 .bookmark-title {
+    top: 20px;
+}
+
+.bmt-3 .bookmark-content {
+    top: 50px;
+    font-size: 14px;
+}
+
+/*--菜单--begin--*/
+
+/*--菜单--end--*/
+
+/*--xx--begin--*/
+ol {
+    margin: 0;
+    padding: 0;
+}
+
+#desktop {
+    width: 870px;
+    height: 460px;
+    margin: 120px auto auto auto;
+    position: relative;
+    overflow: auto;
+}
+
+#desktop li {
+    list-style: none;
+}
+
+#desktop ul li {
+    float: left
+}
+
+.dots {
+    width: 200px;
+    margin: 20px auto 0 auto;
+    height: 30px;
+    color: white;
+    text-align: center;
+}
+
+.dots li {
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    text-align: center;
+    border-radius: 7.5px;
+    background-color: #09599B;
+    margin: 0 8px;
+    cursor: pointer;
+}
+
+.dots .active {
+    background-color: #018FFB;
+}
+
+/*--xx--end--*/
+
+/**/
+.jf-menu, .jf-menu li {
+    padding: 0;
+    margin: 0;
+    background-color: #f1f0f0;
+}
+
+.jf-menu .img {
+    margin-right: 5px;
+    display: inline-block;
+    vertical-align: middle;
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+    -webkit-filter: grayscale(1)
+}
+
+.jf-menu a {
+    text-decoration: none;
+    display: block;
+    margin: 0;
+    padding-left: 25px;
+    cursor: pointer;
+    color: #5b5b5b;
+}
+
+.jf-menu a:hover {
+    color: #0085e3;
+    font-weight: bold
+}
+
+.jf-menu a:hover .img {
+    -webkit-filter: grayscale(0);
+    -moz-filter: grayscale(0);
+    -ms-filter: grayscale(0);
+    -o-filter: grayscale(0);
+    filter: grayscale(0);
+    /*filter: gray;*/
+}
+
+.jf-menu li > ul {
+    margin-left: 10px;
+    padding: 0;
+}
+
+.jf-menu li {
+    line-height: 30px;
+    position: relative;
+}
+
+.jf-menu .child {
+    width: 14px;
+    height: 13px;
+    display: inline-block;
+    margin-right: 16px;
+    margin-bottom: 17px;
+    cursor: pointer;
+    background: url('images/p-menu-arrow2.png');
+    position: absolute;
+    left: 5px;
+    top: 6px;
+}
+
+.jf-menu .opend > .child {
+    background: url('images/p-menu-arrow1.png');
+}
+
+.jf-menu > li > a {
+    line-height: 40px;
+    background-color: #e0dede;
+    border-bottom: 1px solid #b7b7b7;
+}
+
+.jf-menu > li > a img {
+    filter: grayscale(0) !important;
+}
+
+.jf-menu > li > .child {
+    top: 12px;
+}
+
+.jf-menu .closed > ul {
+    display: none
+}
+
+.jf-menu .opend > ul {
+    display: block
+}
+
+.jf-menu > li > a:hover {
+    background: #d0cfcf;
+}
+
+.jf-menu li ul li ul li a img {
+    width: 10px;
+    height: 10px;
+    vertical-align: middle;
+}
+
+/**/
+
+.main-content {
+    position: absolute;
+    top: 40px;
+    bottom: 0px;
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+}
+
+.iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}

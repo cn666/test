@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>企业超标情况</title>
+    <link rel="stylesheet" href="../../static/themes/vocsV2/main.css">
+
+</head>
+<style>
+    body,html{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-flow:column;
+    }
+
+</style>
+<body>
+<div class="standup">
+    <div class="backicon"><img src="../../static/themes/img/back.png" alt=""></div>
+    <p class="psname">企业超标情况（天津市）</p>
+    <p class="exceed">超标/总数： <span style="color:#0048FE ">1/205</span></p>
+    <p class="dabiao">达标率：<span style="color: #5ECB58">99.51%</span></p>
+</div>
+<div class="down">
+
+        <div class="bottomL">
+            <div class="bottomLbox">
+                <div class="btmloxT">
+                    <div class="btmloxTbor"><div></div></div>
+                    <p>企业列表</p>
+                </div>
+
+                <div class="btmlox100">
+                    <div class="btmloxBitem btmloxBitemOn"><span>天津国投津能发电有限公司</span><div class="jiao jiaoOn"></div>
+                    </div>
+                </div>
+
+                <div class="btmlox100">
+                    <div class="btmloxBitem"><span>天津国投津能发电有限公司</span><div class="jiao"></div>
+                    </div>
+                </div>
+
+                <div class="btmlox100">
+                    <div class="btmloxBitem"><span>天津国投津能发电有限公司</span><div class="jiao"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="bottomR" style="padding-top: 15px">
+            <table id="tt" height="98%" width="100%" ></table>
+        </div>
+
+</div>
+
+<script src="../../static/js/V2.4/base_common.js"></script>
+<script src="../../static/js/V2.4/common.min.js"></script>
+<script>
+    var jqTreeGrid = $('#tt').datagrid({
+        method: "GET",
+        url: '../11.json',
+        fitColumns: true,
+        fixed:true,
+        columns: [[
+            {title: '监控点', field: 'f1', width: $(this).width() * 0.05, align: 'center',},
+            {title: '污染物', field: 'f2', width: $(this).width() * 0.05,align: 'center',formatter:function (value, row, index) {
+                return '<span style="">'+value+'</span>'
+            }},
+            {title: '报警时间', field: 'f3', width: $(this).width() * 0.1, align: 'center',formatter:function (value, row, index) {
+                return '<span style="">'+value+'</span>'
+            }},
+            {title: '报警值', field: 'f4', width: $(this).width() * 0.1, align: 'center',formatter:function (value, row, index) {
+                return '<span style="">'+value+'</span>'
+            }},
+            {title: '标准值', field: 'f5', width: $(this).width() * 0.1, align: 'center',formatter:function (value, row, index) {
+                return '<span style="">'+value+'</span>'
+            }}
+        ]],
+        onDblClickRow:function (index,row) {
+
+        },
+        onLoadSuccess: function (data, response) {
+            $(".datagrid-header-rownumber").text('序号')
+        },
+        onClickRow:function (index, row) {
+            parent.$("#stand").attr('src','http://www.baidu.com')
+        }
+    });
+
+    $('.btmlox100').click(function (e) {
+       $(this).children('.btmloxBitem').addClass('btmloxBitemOn')
+        $(this).siblings().find('.btmloxBitem').removeClass('btmloxBitemOn')
+        $(this).find('.jiao').addClass('jiaoOn')
+        $(this).siblings().find('.jiao').removeClass('jiaoOn')
+
+//        $(this).find('.btmloxBitem').css('color',"red");
+
+
+//        $(this).find('jiao').addClass('jiaoOn')
+
+    })
+
+</script>
+</body>
+</html>

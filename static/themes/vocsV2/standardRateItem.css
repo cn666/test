@@ -1,0 +1,78 @@
+
+.standup{
+    width: 100%;
+    height: 60px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.backicon{
+    width: 29px;
+    height: 29px;
+    margin-left: 28px;
+    cursor: pointer;
+}
+.backicon img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.down{
+    flex: 1;
+    display: flex;
+    flex-flow: row;
+}
+.psname{
+    font-size: 19px;
+    padding-left: 26px;
+}
+
+.exceed{
+    font-size: 19px;
+    color: #CBCBCB;
+    padding-left: 108px;
+}
+.dabiao{
+    font-size: 19px;
+    color: #CBCBCB;
+    padding-left: 44px;
+}
+.btmlox100{
+    width: 100%;
+    /*margin-top: 24px;*/
+}
+.btmloxBitem{
+    width: 100%;
+    height: 46px;
+    /*background: #4EB0F1;*/
+    color: #656565;
+    font-size: 18px;
+    text-align: center;
+    line-height: 46px;
+    position: relative;
+}
+.btmloxBitemOn{
+    background: #4EB0F1;
+    color: #fff;
+}
+.btmlox100:nth-child(2){
+    margin-top: 24px;
+}
+
+.jiao{
+    position: absolute;
+    top:0;
+    right:-11px;
+    height: 0px;
+    width: 0px;
+    border-top: 23px solid transparent;
+    border-left: 11px solid #4EB0F1;
+    border-bottom: 23px solid transparent;
+    float: left;
+    display:none;
+}
+.jiaoOn{
+    display: block;
+}

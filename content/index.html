@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+    <link rel="stylesheet" href="../static/themes/vocsV2/main.css">
+</head>
+<style>
+    body,html{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-flow:row;
+    }
+</style>
+<body>
+<!--左侧-->
+<div class="indexleft">
+        <div class="leftitem">
+            <div class="blueborder checkbor"></div>
+            <div class="itemR checkact">
+                <div class="iconbox"> <div class="icon"><img src="../static/themes/img/icon1.png" alt=""></div></div>
+                <p>达标率</p>
+            </div>
+        </div>
+
+
+        <div class="leftitem">
+        <div class="blueborder "></div>
+        <div class="itemR ">
+            <div class="iconbox"> <div class="icon"><img src="../static/themes/img/icon2.png" alt=""></div></div>
+            <p>传输有效率</p>
+        </div>
+    </div>
+
+         <div class="leftitem">
+        <div class="blueborder "></div>
+        <div class="itemR ">
+            <div class="iconbox"> <div class="icon"><img src="../static/themes/img/icon3.png" alt=""></div></div>
+            <p>超标评价</p>
+        </div>
+    </div>
+
+        <div class="leftitem">
+        <div class="blueborder "></div>
+        <div class="itemR ">
+            <div class="iconbox"> <div class="icon"><img src="../static/themes/img/icon4.png" alt=""></div></div>
+            <p>查询</p>
+        </div>
+    </div>
+
+        <div class="leftitem">
+        <div class="blueborder "></div>
+        <div class="itemR ">
+            <div class="iconbox"> <div class="icon"><img src="../static/themes/img/icon5.png" alt=""></div></div>
+            <p>关注</p>
+        </div>
+    </div>
+
+</div>
+
+
+<!--右侧-->
+<div class="indexright">
+    <!--达标统计-->
+     <!--<iframe src="pages/standardRate.html" frameborder="0" width="100%" height="100%" id="stand"></iframe>-->
+
+    <!--企业超标情况-->
+    <!--<iframe src="pages/standardRateItem.html" frameborder="0" width="100%" height="100%"></iframe>-->
+
+    <!--达标率统计-->
+    <iframe src="pages/standardRate.html" frameborder="0" width="100%" height="100%" id="iframe1"></iframe>
+</div>
+
+
+<script src="../static/js/V2.4/base_common.js"></script>
+<script src="../static/js/V2.4/common.min.js"></script>
+<script>
+
+//    https://cn666.github.io/test/
+            var pageConfig={
+                page:{
+                    //达标率
+                    dabiao:'pages/standardRate.html',
+
+                    //传输有效率
+                    chuanshu:'pages/transmission.html',
+
+                    //超标评价
+                    ping:"pages/evaluate.html",
+
+                    //查询
+                    find:"pages/find.html",
+
+                    //关注
+                    guanzhu:"pages/follow.html"
+                }
+            }
+
+        $(".leftitem").click(function () {
+            // 切换左侧选项卡
+            $(this).find('.blueborder').addClass('checkbor');
+            $(this).siblings().find('.blueborder').removeClass('checkbor');
+            $(this).find('.itemR').addClass('checkact');
+            $(this).siblings().find('.itemR').removeClass('checkact');
+
+            if($(this).index()==0){
+                $("#iframe1").attr('src',pageConfig.page.dabiao)
+            }else if($(this).index()==1){
+                $("#iframe1").attr('src',pageConfig.page.chuanshu)
+            }else if($(this).index()==2){
+                $("#iframe1").attr('src',pageConfig.page.ping)
+            }else if($(this).index()==3){
+                $("#iframe1").attr('src',pageConfig.page.find)
+            }else if($(this).index()==4){
+                $("#iframe1").attr('src',pageConfig.page.guanzhu)
+            }
+        })
+
+</script>
+</body>
+</html>

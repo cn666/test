@@ -1,0 +1,9 @@
+{
+  "pollutant":"CO",
+  "enabledState":"启用",
+  "stdVal":10,
+  "measUnit":"mg/m3",
+  "dataAcc":10,
+  "equipBelong":10,
+  "remark":"安全无误。"
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>天津市达标率统计</title>
+    <link rel="stylesheet" href="../../static/themes/vocsV2/main.css">
+</head>
+<style>
+    body,html{
+        display: flex;
+        flex-flow: column;
+        background: #EFEFEF;
+    }
+    .datagrid-htable tbody{
+        background: #FFFFFF!important;
+    }
+    .datagrid-header-inner{
+        background: #fff;
+    }
+
+    .datagrid-header td, .datagrid-body td, .datagrid-footer td{
+        height: 44px;
+    }
+
+    .datagrid-btable tr:nth-child(odd){
+        background: #F6FCFC;
+    }
+    .datagrid-header td, .datagrid-body td, .datagrid-footer td{
+        border: none;
+    }
+    .datagrid-header{
+        border: none;
+    }
+    .datagrid-htable td{
+        color: #D2D2D2;
+    }
+</style>
+<body>
+<div class="standup">
+    <div class="bluebox"></div>
+    <p class="qyname">天津市达标率统计</p>
+
+    <div class="daydata">
+            <div class="dayfont">
+                <span class="dfont">日数据</span>
+                <span class="daydate">2018-07-10</span>
+            </div>
+            <div class="daynum">100%</div>
+    </div>
+
+    <div class="nowdata">
+        <div class="nowfont">
+            <span class="nfont">实时数据</span>
+            <span class="nowdate">2018-07-10 9时</span>
+        </div>
+        <div class="nownum">100%</div>
+    </div>
+
+</div>
+
+
+
+<div class="standown">
+    <!--日数据-->
+    <div class="daybox">
+            <div class="dayup">
+                <span>日数据</span>
+                <span class="dayupdate">2018-08-10</span>
+            </div>
+            <div class="daytable">
+                <table id="dayData" height="90%" width="100%" ></table>
+            </div>
+    </div>
+
+    <!--实时数据-->
+    <div class="nowbox">
+            <div class="nowup">
+                <span>实时数据</span>
+                <span class="nowupdate">2018-08-10</span>
+            </div>
+
+        <div class="nowtable">
+            <table id="nowData" height="90%" width="100%" ></table>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../static/js/V2.4/base_common.js"></script>
+<script src="../../static/js/V2.4/common.min.js"></script>
+<script>
+    $('#dayData').datagrid({
+        method: "GET",
+        url: '../11.json',
+        fitColumns: true,
+        fixed:true,
+        columns: [[
+            {title: '行政区划', field: 'f1', width: $(this).width() * 0.05, align: 'center',},
+            {title: '超标数/总数', field: 'f2', width: $(this).width() * 0.05,align: 'center',formatter:function (value, row, index) {
+                return '<span style="color: #FF534C">'+value+'</span>'
+            }},
+            {title: '达标率', field: 'f3', width: $(this).width() * 0.05, align: 'center',formatter:function (value, row, index) {
+                return '<span style="color: #33AB18">'+value+'</span>'
+            }},
+        ]],
+        onDblClickRow:function (index,row) {
+
+        },
+        onLoadSuccess: function (data, response) {
+            $(".datagrid-header-rownumber").text('序号')
+        },
+        onClickRow:function (index, row) {
+            parent.$("#stand").attr('src','http://www.baidu.com')
+        }
+    });
+
+
+    $('#nowData').datagrid({
+        method: "GET",
+        url: '../11.json',
+        fitColumns: true,
+        fixed:true,
+        columns: [[
+            {title: '行政区划', field: 'f1', width: $(this).width() * 0.05, align: 'center',},
+            {title: '超标数/总数', field: 'f2', width: $(this).width() * 0.05,align: 'center',formatter:function (value, row, index) {
+                return '<span style="color: #FF534C">'+value+'</span>'
+            }},
+            {title: '达标率', field: 'f3', width: $(this).width() * 0.05, align: 'center',formatter:function (value, row, index) {
+                return '<span style="color: #33AB18">'+value+'</span>'
+            }},
+        ]],
+        onDblClickRow:function (index,row) {
+
+        },
+        onLoadSuccess: function (data, response) {
+            $(".datagrid-header-rownumber").text('序号')
+        },
+        onClickRow:function (index, row) {
+            parent.$("#stand").attr('src','http://www.baidu.com')
+        }
+    });
+
+</script>
+</body>
+</html>

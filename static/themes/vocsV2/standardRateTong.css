@@ -1,0 +1,90 @@
+.bluebox{
+    width: 6px;
+    height: 21px;
+    background: #019AFF;
+    margin-left: 24px;
+}
+.qyname{
+    font-size: 19px;
+    padding-left: 12px;
+    color: #404040;
+}
+
+.daydata{
+        display: flex;
+        flex-flow: row ;
+        margin-left: 17.2%;
+}
+.nowdata{
+    display: flex;
+    flex-flow: row ;
+    margin-left: 38px;
+}
+
+.dayfont,.nowfont{
+    display: flex;
+    flex-flow: column;
+}
+.dayfont,.nowfont span {
+    text-align: right;
+}
+.daynum,.nownum{
+    width: 96px;
+    height: 33px;
+    background: #7CE07D;
+    color: #fff;
+    text-align: center;
+    line-height: 33px;
+    font-size: 18px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-left: 12px;
+}
+
+.daydate,.nowdate{
+    color: #A6787A;
+}
+.dfont,.nfont{
+    color: #ACACAC;
+}
+
+.standown{
+    flex: 1;
+}
+
+.daybox,.nowbox{
+    width: 36%;
+    height: 92%;
+    background: #fff;
+    margin-left: 26px;
+    margin-top: 20px;
+    border: 1px solid #E1E1E1;
+    box-sizing: border-box;
+    border-radius: 8px;
+    float: left;
+}
+.nowbox{
+    margin-left: 26px;
+}
+
+.dayup,.nowup{
+    width: 100%;
+    height: 5.4%;
+    box-sizing: border-box;
+    border-bottom: 1px solid #D1D1D1;
+    display: flex;
+    align-items: center;
+    padding-left: 27px;
+}
+.dayup,.nowup span {
+    color: #666666;
+    font-size: 16px;
+}
+.dayupdate,.nowupdate{
+    padding-left: 25px;
+}
+.daytable,.nowtable{
+    width: 96%;
+    height: 96%;
+    margin: 30px auto;
+}

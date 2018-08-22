@@ -3,40 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <title>传输有效率</title>
+
     <link rel="stylesheet" href="../../static/themes/vocsV2/main.css">
     <link rel="stylesheet" href="../../static/themes/vocsV2/transmission.css">
 </head>
 <style>
-    body,html{
+    body, html {
         display: flex;
         flex-flow: column;
         background: #EFEFEF;
     }
-    .datagrid-header .datagrid-cell span{
+
+    /*修改表格样式*/
+    .datagrid-header .datagrid-cell span {
         font-size: 16px;
     }
-    .datagrid-htable tbody{
-        background: #F6F6F6!important;
+
+    .datagrid-htable tbody {
+        background: #F6F6F6 !important;
     }
-    .datagrid-header-inner{
+
+    .datagrid-header-inner {
         background: #F6F6F6;
     }
-    .datagrid-htable td{
+
+    .datagrid-htable td {
         color: #717171;
     }
-    .datagrid-row-selected{
-        background: #5CBEFF;
+
+    .datagrid-header, .datagrid-toolbar, .datagrid-pager, .datagrid-footer-inner{
+        border-color: #fff;
     }
-    .datagrid-row-selected  td div{
-        color: #fff;
-    }
-    .datagrid-row-selected  td div span{
-        color: #fff!important;
-    }
-    .datagrid-header td, .datagrid-body td, .datagrid-footer td{
+
+    .datagrid-header td, .datagrid-body td, .datagrid-footer td {
         border: none;
         border-bottom: 1px solid #D2D2D2;
-        height: 50px;
+        height: 49px;
     }
 </style>
 <body>
@@ -45,185 +47,246 @@
     <p>传输有效率</p>
 </div>
 <div class="tansdown">
-        <!--查询条件-->
-        <div class="tansfind">
-            <div class="tansfindTime">
-               <div class="tansfindTimeT">
-                        <div class="blueline"></div>
-                        <p>查询条件</p>
-               </div>
-                <div class="tansfindTimeD">
-                    <div class="tanstimebox">
-                        <p class="tansstartFont">开始时间：</p>
-                        <input type="text" class="tansstartTime">
-                        <p class="tansendFont">结束时间：</p>
-                        <input type="text" class="tansendTime">
-                        <button class="tancheck">查询</button>
-                    </div>
-
-
+    <!--查询条件-->
+    <div class="tansfind">
+        <div class="tansfindTime">
+            <div class="tansfindTimeT">
+                <div class="blueline"></div>
+                <p>查询条件</p>
+            </div>
+            <div class="tansfindTimeD">
+                <div class="tanstimebox">
+                    <p class="tansstartFont">开始时间：</p>
+                    <input type="text" class="tansstartTime">
+                    <p class="tansendFont">结束时间：</p>
+                    <input type="text" class="tansendTime">
+                    <button class="tancheck">查询</button>
                 </div>
+
+
             </div>
         </div>
+    </div>
 
     <!--右侧数据-->
     <div class="tansRdata">
-            <div class="tansRdataL">
-                    <div class="tablehead">
-                        <div class="tablelist">行政区划</div>
-                        <div class="tablelist">当日传输有效率%</div>
-                        <div class="tablelist">累计传输有效率%</div>
-                    </div>
-
-                    <div class="tablebody">
-
-                        <div class="tabletr">
-                            <div class="tabletd">天津市</div>
-                            <div class="tabletd green">100</div>
-                            <div class="tabletd green">96.93</div>
-                            <div class="jiao1 jiao1On"></div>
-                        </div>
-
-                        <div class="tabletr tron">
-                            <div class="tabletd tdon">河西区</div>
-                            <div class="tabletd green tdon">100</div>
-                            <div class="tabletd green tdon">100</div>
-                            <div class="jiao1 jiao1On"></div>
-                        </div>
-
-                        <div class="tabletr ">
-                            <div class="tabletd ">和平区</div>
-                            <div class="tabletd green ">100</div>
-                            <div class="tabletd green ">100</div>
-                            <div class="jiao1 "></div>
-                        </div>
-                    </div>
-
-                <!--<table id="tansRdataL" height="98%" width="100%" ></table>-->
+        <div class="tansRdataL">
+            <div class="tablehead">
+                <div class="tablelist">行政区划</div>
+                <div class="tablelist">当日传输有效率%</div>
+                <div class="tablelist">累计传输有效率%</div>
             </div>
-            <div class="tansRdataR">
-                    <div class="tableheadR">
-                        <div class="tablelistR">行政区划</div>
-                        <div class="tablelistR">当日传输有效率%</div>
-                        <div class="tablelistR">累计传输有效率%</div>
-                    </div>
 
-                    <!--表格内容-->
-                    <div class="tablebodyR">
+            <div class="tablebody">
 
-                        <div class="tabletrR">
-                            <div class="tabletdR">天津市</div>
-                            <div class="tabletdR green">100</div>
-                            <div class="tabletdR green">96.93</div>
-                            <div class="jiao1 jiao1On"></div>
-                        </div>
+                <!--<div class="tabletr">-->
+                    <!--<div class="tabletd">天津市</div>-->
+                    <!--<div class="tabletd green">100</div>-->
+                    <!--<div class="tabletd green">96.93</div>-->
+                    <!--<div class="jiao1 jiao1On"></div>-->
+                <!--</div>-->
 
-                        <div class="tabletrR">
-                            <div class="tabletdR">天津市</div>
-                            <div class="tabletdR green">100</div>
-                            <div class="tabletdR green">96.93</div>
-                            <div class="jiao1 jiao1On"></div>
-                        </div>
+                <!--<div class="tabletr tron">-->
+                    <!--<div class="tabletd tdon">河西区</div>-->
+                    <!--<div class="tabletd green tdon">100</div>-->
+                    <!--<div class="tabletd green tdon">100</div>-->
+                    <!--<div class="jiao1 jiao1On"></div>-->
+                <!--</div>-->
 
-                        <div class="tabletrR">
-                            <div class="tabletdR slh1"></div>
-                            <div class="tabletdR green">100</div>
-                            <div class="tabletdR green">96.93</div>
-                            <div class="jiao1 jiao1On"></div>
-                        </div>
-                    </div>
+                <!--<div class="tabletr ">-->
+                    <!--<div class="tabletd ">和平区</div>-->
+                    <!--<div class="tabletd green ">100</div>-->
+                    <!--<div class="tabletd green ">100</div>-->
+                    <!--<div class="jiao1 "></div>-->
+                <!--</div>-->
             </div>
+
+            <!--<table id="tansRdataL" height="98%" width="100%" ></table>-->
+        </div>
+        <div class="tansRdataR">
+            <table id="tablh" width="100%"  height="98%"></table>
+            <!--<div class="tableheadR">-->
+                <!--<div class="tablelistR">行政区划</div>-->
+                <!--<div class="tablelistR">当日传输有效率%</div>-->
+                <!--<div class="tablelistR">累计传输有效率%</div>-->
+            <!--</div>-->
+
+            <!--&lt;!&ndash;表格内容&ndash;&gt;-->
+            <!--<div class="tablebodyR">-->
+
+                <!--<div class="tabletrR">-->
+                    <!--<div class="tabletdR">天津市</div>-->
+                    <!--<div class="tabletdR green">100</div>-->
+                    <!--<div class="tabletdR green">96.93</div>-->
+                    <!--<div class="jiao1 jiao1On"></div>-->
+                <!--</div>-->
+
+                <!--<div class="tabletrR">-->
+                    <!--<div class="tabletdR">天津市</div>-->
+                    <!--<div class="tabletdR green">100</div>-->
+                    <!--<div class="tabletdR green">96.93</div>-->
+                    <!--<div class="jiao1 jiao1On"></div>-->
+                <!--</div>-->
+
+                <!--<div class="tabletrR">-->
+                    <!--<div class="tabletdR slh1">上海</div>-->
+                    <!--<div class="tabletdR green">100</div>-->
+                    <!--<div class="tabletdR green">96.93</div>-->
+                    <!--<div class="jiao1 jiao1On"></div>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
     </div>
 
 </div>
 
+<script type="text/html"  id="leftlist">
+    {{each result as li i}}
+    {{if i==0}}
+    <div class="tabletr tron"  areaid="{{li.id}}">
+        <div class="tabletd tdon">{{li.area}}</div>
+        <div class="tabletd green tdon">{{li.nowC}}</div>
+        <div class="tabletd green tdon">{{li.leijiC}}</div>
+        <div class="jiao1 jiao1On"></div>
+    </div>
+    {{else}}
+    <div class="tabletr" areaid="{{li.id}}">
+        <div class="tabletd">{{li.area}}</div>
+        <div class="tabletd green">{{li.nowC}}</div>
+        <div class="tabletd green">{{li.leijiC}}</div>
+        <div class="jiao1 jiao1On"></div>
+    </div>
+    {{/if}}
+    {{/each}}
 
-
+</script>
 <script src="../../static/js/V2.4/base_common.js"></script>
 <script src="../../static/js/V2.4/common.min.js"></script>
 <script>
 
-    $(".tansstartTime").mydatePicker({
+    (function ($) {
 
-        onSelect:function (date) {
+        var pageConfig = {
+            json: {
+                //左侧表格
+                transmissData:'../json/transmissData.json',
 
-        }
-    });
-
-    $(".tansendTime").mydatePicker({
-
-        onSelect:function (date) {
-
-        }
-    });
-
-
-     $('#tansRdataL').datagrid({
-        method: "GET",
-        url: '../11.json',
-        fitColumns: true,
-         singleSelect:true,
-        fixed:true,
-        columns: [[
-            {title: '行政区划', field: 'f1', width: $(this).width() * 0.06, align: 'center',styler:function (value,row,index) {
-                return 'color:#858585';
-            }},
-            {title: '当日传输有效率%', field: 'f2', width: $(this).width() * 0.1,align: 'center',formatter:function (value, row, index) {
-                return '<span style="color: #FF534C">'+value+'</span>'
-            }},
-            {title: '累计传输有效率%', field: 'f3', width: $(this).width() * 0.1, align: 'center',formatter:function (value, row, index) {
-                return '<span style="color: #33AB18">'+value+'</span>'
-            }},
-        ]],
-        onDblClickRow:function (index,row) {
-
-        },
-        onLoadSuccess: function (data, response) {
-            $(".datagrid-header-rownumber").text('序号')
-        },
-        onClickRow:function (index, row) {
-
-        }
-    });
-
-
-    $('#tansRdataR').datagrid({
-        method: "GET",
-        url: '../11.json',
-        fitColumns: true,
-        fixed:true,
-        columns: [[
-            {title: '行政区划', field: 'f1', width: $(this).width() * 0.1, align: 'left',styler:function (value,row,index) {
-                return 'padding-left: 15px;color:#858585';
-            }},
-            {title: '当日传输有效率%', field: 'f2', width: $(this).width() * 0.05,align: 'center',formatter:function (value, row, index) {
-                return '<span style="color: #FF534C">'+value+'</span>'
+                //右侧表格
+                transTableData:'../json/transTableData.json'
             }
-            },
-            {title: '累计传输有效率%', field: 'f3', width: $(this).width() * 0.05, align: 'center',formatter:function (value, row, index) {
-                return '<span style="color: #33AB18">'+value+'</span>'
-            }},
-        ]],
-        onDblClickRow:function (index,row) {
 
-        },
-        onLoadSuccess: function (data, response) {
-            $(".datagrid-header-rownumber").text('序号')
-        },
-        onClickRow:function (index, row) {
-            parent.$("#stand").attr('src','http://www.baidu.com')
         }
-    });
+
+        var initPage = {
+            content: function () {
+                //加载时间控件
+                $(".tansstartTime").mydatePicker({
+                    onSelect: function (date) {
+
+                    }
+                });
+                $(".tansendTime").mydatePicker({
+
+                    onSelect: function (date) {
+
+                    }
+                });
+                this.loadingL(initPage.params());
+            },
+            loadingL(params){
+                //加载左侧
+                Public.get(pageConfig.json.transmissData,params,function (data) {
+                    var sourceHTML = template("leftlist", {result:data.result});
+                    document.querySelector(".tablebody").innerHTML = sourceHTML;
+                    loadingR({areaid:data.result[0].id})
+                    $('.tabletr').click(function () {
+                        $(this).addClass('tron').siblings().removeClass('tron');
+                        $(this).find('.tabletd').addClass('tdon');
+                        $(this).siblings().find('.tabletd').removeClass('tdon')
+                        $(this).find(".jiao1").addClass('jiao1On');
+                        $(this).siblings().find(".jiao1").removeClass('jiao1On');
+                        var areaid=$(this).attr('areaid')
+                        loadingR({areaid})
+                    })
+                })
+
+            },
+            params(){
+                var startTime=$('.tansstartTime').val();
+                var endTime=$('.tansendTime').val()
+                return {startTime,endTime}
+
+            },
+            events: function () {
+                    //查询
+                $(".tancheck").click(function () {
+                    initPage.loadingL(initPage.params());
+                })
+
+            },
+            init: function () {
+                this.content();
+                this.events();
+            }
+        }
 
 
-        $('.tabletr').click(function () {
-            $(this).addClass('tron').siblings().removeClass('tron');
-            $(this).find('.tabletd').addClass('tdon');
-            $(this).siblings().find('.tabletd').removeClass('tdon')
-            $(this).find(".jiao1").addClass('jiao1On');
-            $(this).siblings().find(".jiao1").removeClass('jiao1On');
+        $(document).ready(function () {
+            initPage.init();
+        });
 
-        })
+
+        var loadingR=params=>{
+            $('#tablh').datagrid({
+                method: "GET",
+                url: pageConfig.json.transTableData,
+                fitColumns: true,
+                fixed: true,
+                queryParams:params,
+                columns: [[
+                    {
+                        title: '企业名称',
+                        field: 'f1',
+                        width: $(this).width() * 0.1,
+                        align: 'left',
+                        styler: function (value, row, index) {
+                            return 'padding-left: 15px;color:#858585';
+                        }
+                    },
+                    {
+                        title: '当日传输有效率%',
+                        field: 'f2',
+                        width: $(this).width() * 0.05,
+                        align: 'center',
+                        formatter: function (value, row, index) {
+                            return '<span style="color: #FF534C">' + value + '</span>'
+                        }
+                    },
+                    {
+                        title: '累计传输有效率%',
+                        field: 'f3',
+                        width: $(this).width() * 0.05,
+                        align: 'center',
+                        formatter: function (value, row, index) {
+                            return '<span style="color: #33AB18">' + value + '</span>'
+                        }
+                    },
+                ]],
+                onDblClickRow: function (index, row) {
+
+                },
+                onLoadSuccess: function (data, response) {
+
+                },
+                onClickRow: function (index, row) {
+
+                }
+            });
+
+        }
+
+
+    }(jQuery));
 
 </script>
 </body>

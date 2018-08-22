@@ -77,7 +77,6 @@
 <script src="../static/js/V2.4/common.min.js"></script>
 <script>
 
-//    https://cn666.github.io/test/
             var pageConfig={
                 page:{
                     //达标率
@@ -105,14 +104,19 @@
             $(this).siblings().find('.itemR').removeClass('checkact');
 
             if($(this).index()==0){
+                //达标率
                 $("#iframe1").attr('src',pageConfig.page.dabiao)
             }else if($(this).index()==1){
+                //传输有效率
                 $("#iframe1").attr('src',pageConfig.page.chuanshu)
             }else if($(this).index()==2){
+                //超标评价
                 $("#iframe1").attr('src',pageConfig.page.ping)
             }else if($(this).index()==3){
+                //查询
                 $("#iframe1").attr('src',pageConfig.page.find)
             }else if($(this).index()==4){
+                //关注
                 $("#iframe1").attr('src',pageConfig.page.guanzhu)
             }
         })

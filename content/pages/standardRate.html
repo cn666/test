@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>达标率</title>
+
     <link rel="stylesheet" href="../../static/themes/vocsV2/main.css">
 
 </head>
@@ -45,45 +46,80 @@
 <script src="../../static/js/V2.4/base_common.js"></script>
 <script src="../../static/js/V2.4/common.min.js"></script>
 <script>
-    $(".startTime").mydatePicker({
+    (function ($) {
 
-        onSelect:function (date) {
-
-        }
-    });
-
-    $(".endTime").mydatePicker({
-
-        onSelect:function (date) {
+        var pageConfig = {
+            json: {
+                standDatagrid:'../json/standDatagrid.json'
+            }
 
         }
-    });
 
-    var jqTreeGrid = $('#tt').datagrid({
-        method: "GET",
-        url: '../11.json',
-        fitColumns: true,
-        fixed:true,
-        columns: [[
-            {title: '行政区划', field: 'f1', width: $(this).width() * 0.05, align: 'center',},
-            {title: '超标数/总数', field: 'f2', width: $(this).width() * 0.05,align: 'center',formatter:function (value, row, index) {
-                return '<span style="color: #FF534C">'+value+'</span>'
-            }},
-            {title: '达标率', field: 'f3', width: $(this).width() * 0.1, align: 'center',formatter:function (value, row, index) {
-                return '<span style="color: #33AB18">'+value+'</span>'
-            }},
-        ]],
-        onDblClickRow:function (index,row) {
+        var initPage = {
+            loading(){
+                //初始化时间插件
+                $(".startTime").mydatePicker({
+                    onSelect:function (date) {
+                    }
+                });
 
-        },
-        onLoadSuccess: function (data, response) {
-            $(".datagrid-header-rownumber").text('序号')
-        },
-        onClickRow:function (index, row) {
-            parent.$("#stand").attr('src','http://www.baidu.com')
+                $(".endTime").mydatePicker();
+                loadingData();
+            },
+            params(){
+                    var startTime=$(".startTime").val();
+                    var endTime=$(".endTime").val();
+                    return {startTime,endTime}
+            },
+            events(){
+                        //查询
+                        $('.find').click(function () {
+                            loadingData(initPage.params())
+                        })
+
+
+            },
+            init(){
+                this.loading();
+                this.events();
+            }
         }
-    });
 
+
+        $(document).ready(function () {
+            initPage.init();
+        });
+
+        var loadingData=params=>{
+            $('#tt').datagrid({
+                method: "GET",
+                url:pageConfig.json.standDatagrid,
+                fitColumns: true,
+                fixed:true,
+                queryParams:params,
+                columns: [[
+                    {title: '行政区划', field: 'f1', width: $(this).width() * 0.05, align: 'center'},
+                    {title: '超标数/总数', field: 'f2', width: $(this).width() * 0.05,align: 'center',formatter:function (value, row, index) {
+                        return '<span style="color: #FF534C">'+value+'</span>'
+                    },
+
+                    },
+                    {title: '达标率', field: 'f3', width: $(this).width() * 0.1, align: 'center',formatter:function (value, row, index) {
+                        return '<span style="color: #33AB18">'+value+'</span>'
+                    }},
+                ]],
+                onDblClickRow:function (index,row) {
+
+                },
+                onLoadSuccess: function (data, response) {
+
+                },
+                onClickRow:function (index, row) {
+                     parent.$("#iframe1").attr('src','pages/standardRateItem.html?id='+row.id)
+                }
+            });
+        }
+    }(jQuery));
 </script>
 </body>
 </html>

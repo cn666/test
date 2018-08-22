@@ -30,49 +30,51 @@
                 <div class="evalfindTimeD">
                     <div class="evaltimebox">
                         <p class="evalstartFont">开始时间：</p>
-                        <input type="text" class="evalstartTime">
+                        <input type="text" class="evalstartTime"  name="startTime">
                         <p class="evalendFont">结束时间：</p>
-                        <input type="text" class="evalendTime">
+                        <input type="text" class="evalendTime"    name="endTime">
                     </div>
                 </div>
 
                 <!--污染物-->
+              <form action=""  id="form1">
                 <div class="evalwrw">
                     <div class="evalwrwbox">
                         <div class="evalwrwlist">
                             <div class="evalwrwitem"><span class="yuan"></span><span class="wrwfont">化学需氧量</span></div>
                             <div class="evalwrwitem">评价标准值：</div>
-                            <div class="evalwrwitem"><input type="text" class="wrwtext"><span class="fon16">mg/l</span></div>
+                            <div class="evalwrwitem"><input type="text" class="wrwtext"  name="huaxue"><span class="fon16">mg/l</span></div>
                         </div>
 
                         <div class="evalwrwlist">
                             <div class="evalwrwitem"><span class="yuan"></span><span class="wrwfont">氨氮</span></div>
                             <div class="evalwrwitem">评价标准值：</div>
-                            <div class="evalwrwitem"><input type="text" class="wrwtext"><span class="fon16">mg/l</span></div>
+                            <div class="evalwrwitem"><input type="text" class="wrwtext" name="andan"><span class="fon16">mg/l</span></div>
                         </div>
 
                         <div class="evalwrwlist">
                             <div class="evalwrwitem"><span class="yuan coleaa"></span><span class="wrwfont">烟尘</span></div>
                             <div class="evalwrwitem">评价标准值：</div>
-                            <div class="evalwrwitem"><input type="text" class="wrwtext"><span class="fon16">mg/l</span></div>
+                            <div class="evalwrwitem"><input type="text" class="wrwtext" name="yanchen"><span class="fon16">mg/l</span></div>
                         </div>
 
                         <div class="evalwrwlist">
                             <div class="evalwrwitem"><span class="yuan coleaa"></span><span class="wrwfont">二氧化硫</span></div>
                             <div class="evalwrwitem">评价标准值：</div>
-                            <div class="evalwrwitem"><input type="text" class="wrwtext"><span class="fon16">mg/l</span></div>
+                            <div class="evalwrwitem"><input type="text" class="wrwtext" name="eryanghualiu"><span class="fon16">mg/l</span></div>
                         </div>
 
                         <div class="evalwrwlist">
                             <div class="evalwrwitem"><span class="yuan coleaa"></span><span class="wrwfont">氮氧化合物</span></div>
                             <div class="evalwrwitem">评价标准值：</div>
-                            <div class="evalwrwitem"><input type="text" class="wrwtext"><span class="fon16">mg/l</span></div>
+                            <div class="evalwrwitem"><input type="text" class="wrwtext" name="danyang"><span class="fon16">mg/l</span></div>
                         </div>
 
 
                         <div class="btn">评价</div>
                     </div>
                 </div>
+                </form>
                 
             </div>
         </div>
@@ -127,6 +129,47 @@
 
         }
     });
+
+
+    (function ($) {
+
+        var pageConfig = {
+            json: {
+                //右侧表格
+                evaluateData:'../json/evaluateData.json',
+
+
+            }
+
+        }
+
+        var initPage = {
+                loading(){
+
+                },
+                params(){
+                      var parms=$('#form1').serializeJson();
+                      console.log(parms)
+                },
+                events(){
+
+                },
+                init(){
+                    this.loading();
+                    this.events();
+                    this.params();
+                }
+        }
+
+        $(document).ready(function () {
+            initPage.init();
+        });
+
+
+
+    }(jQuery));
+
+
 </script>
 </body>
 </html>

@@ -7,11 +7,11 @@
 
 </head>
 <style>
-    body,html{
+    body, html {
         width: 100%;
         height: 100%;
         display: flex;
-        flex-flow:column;
+        flex-flow: column;
     }
 
 </style>
@@ -24,85 +24,177 @@
 </div>
 <div class="down">
 
-        <div class="bottomL">
-            <div class="bottomLbox">
-                <div class="btmloxT">
-                    <div class="btmloxTbor"><div></div></div>
-                    <p>企业列表</p>
+    <div class="bottomL">
+        <div class="bottomLbox">
+            <div class="btmloxT">
+                <div class="btmloxTbor">
+                    <div></div>
                 </div>
+                <p>企业列表</p>
+            </div>
 
-                <div class="btmlox100">
-                    <div class="btmloxBitem btmloxBitemOn"><span>天津国投津能发电有限公司</span><div class="jiao jiaoOn"></div>
-                    </div>
-                </div>
+            <div class="btmloxBtoom">
 
-                <div class="btmlox100">
-                    <div class="btmloxBitem"><span>天津国投津能发电有限公司</span><div class="jiao"></div>
-                    </div>
-                </div>
+                <!--<div class="btmlox100">-->
+                    <!--<div class="btmloxBitem btmloxBitemOn"><span>天津国投津能发电有限公司</span>-->
+                        <!--<div class="jiao jiaoOn"></div>-->
+                    <!--</div>-->
+                <!--</div>-->
 
-                <div class="btmlox100">
-                    <div class="btmloxBitem"><span>天津国投津能发电有限公司</span><div class="jiao"></div>
-                    </div>
-                </div>
+                <!--<div class="btmlox100">-->
+                    <!--<div class="btmloxBitem"><span>天津国投津能发电有限公司</span>-->
+                        <!--<div class="jiao"></div>-->
+                    <!--</div>-->
+                <!--</div>-->
 
+                <!--<div class="btmlox100">-->
+                    <!--<div class="btmloxBitem"><span>天津国投津能发电有限公司</span>-->
+                        <!--<div class="jiao"></div>-->
+                    <!--</div>-->
+                <!--</div>-->
             </div>
         </div>
 
+    </div>
 
-        <div class="bottomR" style="padding-top: 15px">
-            <table id="tt" height="98%" width="100%" ></table>
-        </div>
+
+    <div class="bottomR" style="padding-top: 15px">
+        <table id="tt" height="98%" width="100%"></table>
+    </div>
 
 </div>
-
+<script type="text/html" id="qylist">
+    {{each result as li i}}
+    <div class="btmlox100"  qyid="{{li.qyid}}">
+        {{if i==0 }}
+        <div class="btmloxBitem btmloxBitemOn"><span>{{li.qyname}}</span>
+            <div class="jiao jiaoOn"></div>
+        </div>
+        {{else}}
+        <div class="btmloxBitem "><span>{{li.qyname}}</span>
+            <div class="jiao "></div>
+        </div>
+        {{/if}}
+    </div>
+    {{/each}}
+</script>
 <script src="../../static/js/V2.4/base_common.js"></script>
 <script src="../../static/js/V2.4/common.min.js"></script>
 <script>
-    var jqTreeGrid = $('#tt').datagrid({
-        method: "GET",
-        url: '../11.json',
-        fitColumns: true,
-        fixed:true,
-        columns: [[
-            {title: '监控点', field: 'f1', width: $(this).width() * 0.05, align: 'center',},
-            {title: '污染物', field: 'f2', width: $(this).width() * 0.05,align: 'center',formatter:function (value, row, index) {
-                return '<span style="">'+value+'</span>'
-            }},
-            {title: '报警时间', field: 'f3', width: $(this).width() * 0.1, align: 'center',formatter:function (value, row, index) {
-                return '<span style="">'+value+'</span>'
-            }},
-            {title: '报警值', field: 'f4', width: $(this).width() * 0.1, align: 'center',formatter:function (value, row, index) {
-                return '<span style="">'+value+'</span>'
-            }},
-            {title: '标准值', field: 'f5', width: $(this).width() * 0.1, align: 'center',formatter:function (value, row, index) {
-                return '<span style="">'+value+'</span>'
-            }}
-        ]],
-        onDblClickRow:function (index,row) {
+    (function ($) {
 
-        },
-        onLoadSuccess: function (data, response) {
-            $(".datagrid-header-rownumber").text('序号')
-        },
-        onClickRow:function (index, row) {
-            parent.$("#stand").attr('src','http://www.baidu.com')
+        console.log(urlToJson())
+
+
+        var pageConfig = {
+            json: {
+                //企业列表
+                qylist: '../json/qylist.json',
+
+                //表格
+                wrwData:'../json/wrwData.json'
+            }
+
         }
-    });
 
-    $('.btmlox100').click(function (e) {
-       $(this).children('.btmloxBitem').addClass('btmloxBitemOn')
-        $(this).siblings().find('.btmloxBitem').removeClass('btmloxBitemOn')
-        $(this).find('.jiao').addClass('jiaoOn')
-        $(this).siblings().find('.jiao').removeClass('jiaoOn')
+        var initPage = {
+            loading(){
+                Public.get(pageConfig.json.qylist,{},function (data) {
+                    var sourceHTML = template("qylist", {result:data.qylist});
+                    document.querySelector(".btmloxBtoom").innerHTML = sourceHTML;
+                    loadingData({qyid:data.qylist[0].qyid})
+                    qyclick()
+                })
+            },
+            events(){
+              $('.backicon').click(function () {
+                  parent.$("#iframe1").attr('src','pages/standardRate.html')
+              })
 
-//        $(this).find('.btmloxBitem').css('color',"red");
+            },
+            init(){
+                this.loading();
+                this.events()
+            }
 
 
-//        $(this).find('jiao').addClass('jiaoOn')
+        }
 
-    })
+        $(document).ready(function () {
+            initPage.init();
+        });
 
+        var loadingData=params=>{
+            $('#tt').datagrid({
+                method: "GET",
+                url: pageConfig.json.wrwData,
+                fitColumns: true,
+                fixed: true,
+                queryParams:params,
+                columns: [[
+                    {title: '监控点', field: 'f1', width: $(this).width() * 0.05, align: 'center',},
+                    {
+                        title: '污染物',
+                        field: 'f2',
+                        width: $(this).width() * 0.05,
+                        align: 'center',
+                        formatter: function (value, row, index) {
+                            return '<span style="">' + value + '</span>'
+                        }
+                    },
+                    {
+                        title: '报警时间',
+                        field: 'f3',
+                        width: $(this).width() * 0.1,
+                        align: 'center',
+                        formatter: function (value, row, index) {
+                            return '<span style="">' + value + '</span>'
+                        }
+                    },
+                    {
+                        title: '报警值',
+                        field: 'f4',
+                        width: $(this).width() * 0.1,
+                        align: 'center',
+                        formatter: function (value, row, index) {
+                            return '<span style="">' + value + '</span>'
+                        }
+                    },
+                    {
+                        title: '标准值',
+                        field: 'f5',
+                        width: $(this).width() * 0.1,
+                        align: 'center',
+                        formatter: function (value, row, index) {
+                            return '<span style="">' + value + '</span>'
+                        }
+                    }
+                ]],
+                onLoadSuccess: function (data, response) {
+                },
+                onClickRow: function (index, row) {
+
+                }
+            });
+        }
+
+
+
+        var qyclick=()=>{
+            // 切换企业列表 并刷新右侧数据
+            $('.btmlox100').click(function (e) {
+                $(this).children('.btmloxBitem').addClass('btmloxBitemOn')
+                $(this).siblings().find('.btmloxBitem').removeClass('btmloxBitemOn')
+                $(this).find('.jiao').addClass('jiaoOn')
+                $(this).siblings().find('.jiao').removeClass('jiaoOn')
+                var qyid=$(this).attr('qyid')
+                loadingData({qyid})
+            })
+        }
+
+
+
+    }(jQuery));
 </script>
 </body>
 </html>

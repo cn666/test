@@ -1,0 +1,22 @@
+{
+  "msg":"success",
+  "data":[
+    {
+      "jiankong":"1号机废气",
+      "wrw":"烟尘",
+      "alarmTime":"2018-08-24 10:00",
+      "qival":"38.5",
+      "biaozhun":"35.56"
+    },
+    {
+      "jiankong":"2号机废气",
+      "wrw":"烟尘1",
+      "alarmTime":"2018-08-24 10:00",
+      "qival":"38.5",
+      "biaozhun":"35.56"
+    }
+  ]
+}
+
+
+

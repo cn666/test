@@ -59,12 +59,31 @@
             loading(){
                 //初始化时间插件
                 $(".startTime").mydatePicker({
-                    onSelect:function (date) {
+                    onSelected:function (date) {
+
                     }
                 });
 
-                $(".endTime").mydatePicker();
+                $(".endTime").mydatePicker({
+                    onSelected:function (date) {
+                        checkDate()
+                    }
+                });
                 loadingData();
+
+
+                var checkDate=()=>{
+                    var start= $(".startTime").val();
+                    var end=$(".endTime").val();
+
+                    var startsec=new Date(start).getTime();
+                    var endsec=new Date(end).getTime();
+                    console.log(startsec,endsec)
+                    if(startsec>endsec){
+                        Public.alert("提示","时间格式错误")
+                    }
+                }
+
             },
             params(){
                     var startTime=$(".startTime").val();

@@ -87,48 +87,11 @@
 <script src="../../static/js/V2.4/base_common.js"></script>
 <script src="../../static/js/V2.4/common.min.js"></script>
 <script>
-    $(".evalstartTime").mydatePicker({
-
-        onSelect:function (date) {
-
-        }
-    });
-
-    $(".evalendTime").mydatePicker({
-
-        onSelect:function (date) {
-
-        }
-    });
 
 
-    $('#evalRdata').datagrid({
-        method: "GET",
-        url: '../11.json',
-        fitColumns: true,
-        singleSelect:true,
-        fixed:true,
-        columns: [[
-            {title: '行政区划', field: 'f1', width: $(this).width() * 0.06, align: 'center',styler:function (value,row,index) {
-                return 'color:#858585';
-            }},
-            {title: '超标数/总数', field: 'f2', width: $(this).width() * 0.1,align: 'center',formatter:function (value, row, index) {
-                return '<span style="color: #FF534C">'+value+'</span>'
-            }},
-            {title: '达标率', field: 'f3', width: $(this).width() * 0.1, align: 'center',formatter:function (value, row, index) {
-                return '<span style="color: #33AB18">'+value+'</span>'
-            }},
-        ]],
-        onDblClickRow:function (index,row) {
 
-        },
-        onLoadSuccess: function (data, response) {
-            $(".datagrid-header-rownumber").text('序号')
-        },
-        onClickRow:function (index, row) {
 
-        }
-    });
+
 
 
     (function ($) {
@@ -138,20 +101,33 @@
                 //右侧表格
                 evaluateData:'../json/evaluateData.json',
 
-
             }
 
         }
 
         var initPage = {
                 loading(){
+                    $(".evalstartTime").mydatePicker({
+                        onSelected:function (date) {
+                        }
+                    });
 
+                    $(".evalendTime").mydatePicker({
+                        onSelected:function (date) {
+                            checkDate()
+                        }
+                    });
+                    loadTable()
                 },
                 params(){
                       var parms=$('#form1').serializeJson();
-                      console.log(parms)
+                      return parms;
                 },
                 events(){
+                    //点击评价
+                    $('.btn').click(function () {
+
+                    })
 
                 },
                 init(){
@@ -166,6 +142,45 @@
         });
 
 
+        //加载表格
+        var  loadTable=params=>{
+            $('#evalRdata').datagrid({
+                method: "GET",
+                url: pageConfig.json.evaluateData,
+                fitColumns: true,
+                singleSelect:true,
+                queryParams:params,
+                fixed:true,
+                columns: [[
+                    {title: '行政区划', field: 'f1', width: $(this).width() * 0.06, align: 'center',styler:function (value,row,index) {
+                        return 'color:#858585';
+                    }},
+                    {title: '超标数/总数', field: 'f2', width: $(this).width() * 0.1,align: 'center',formatter:function (value, row, index) {
+                        return '<span style="color: #FF534C">'+value+'</span>'
+                    }},
+                    {title: '达标率', field: 'f3', width: $(this).width() * 0.1, align: 'center',formatter:function (value, row, index) {
+                        return '<span style="color: #33AB18">'+value+'</span>'
+                    }},
+                ]],
+                onLoadSuccess: function (data, response) {
+
+                },
+                onClickRow:function (index, row) {
+
+                }
+            });
+
+        }
+
+        var checkDate=()=>{
+            var start= $(".evalstartTime").val();
+            var end=$(".evalendTime").val();
+            var startsec=new Date(start).getTime();
+            var endsec=new Date(end).getTime();
+            if(startsec>endsec){
+                Public.alert("提示","时间格式错误")
+            }
+        }
 
     }(jQuery));
 

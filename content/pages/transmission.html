@@ -80,24 +80,24 @@
             <div class="tablebody">
 
                 <!--<div class="tabletr">-->
-                    <!--<div class="tabletd">天津市</div>-->
-                    <!--<div class="tabletd green">100</div>-->
-                    <!--<div class="tabletd green">96.93</div>-->
-                    <!--<div class="jiao1 jiao1On"></div>-->
+                <!--<div class="tabletd">天津市</div>-->
+                <!--<div class="tabletd green">100</div>-->
+                <!--<div class="tabletd green">96.93</div>-->
+                <!--<div class="jiao1 jiao1On"></div>-->
                 <!--</div>-->
 
                 <!--<div class="tabletr tron">-->
-                    <!--<div class="tabletd tdon">河西区</div>-->
-                    <!--<div class="tabletd green tdon">100</div>-->
-                    <!--<div class="tabletd green tdon">100</div>-->
-                    <!--<div class="jiao1 jiao1On"></div>-->
+                <!--<div class="tabletd tdon">河西区</div>-->
+                <!--<div class="tabletd green tdon">100</div>-->
+                <!--<div class="tabletd green tdon">100</div>-->
+                <!--<div class="jiao1 jiao1On"></div>-->
                 <!--</div>-->
 
                 <!--<div class="tabletr ">-->
-                    <!--<div class="tabletd ">和平区</div>-->
-                    <!--<div class="tabletd green ">100</div>-->
-                    <!--<div class="tabletd green ">100</div>-->
-                    <!--<div class="jiao1 "></div>-->
+                <!--<div class="tabletd ">和平区</div>-->
+                <!--<div class="tabletd green ">100</div>-->
+                <!--<div class="tabletd green ">100</div>-->
+                <!--<div class="jiao1 "></div>-->
                 <!--</div>-->
             </div>
 
@@ -106,34 +106,34 @@
         <div class="tansRdataR">
             <table id="tablh" width="100%"  height="98%"></table>
             <!--<div class="tableheadR">-->
-                <!--<div class="tablelistR">行政区划</div>-->
-                <!--<div class="tablelistR">当日传输有效率%</div>-->
-                <!--<div class="tablelistR">累计传输有效率%</div>-->
+            <!--<div class="tablelistR">行政区划</div>-->
+            <!--<div class="tablelistR">当日传输有效率%</div>-->
+            <!--<div class="tablelistR">累计传输有效率%</div>-->
             <!--</div>-->
 
             <!--&lt;!&ndash;表格内容&ndash;&gt;-->
             <!--<div class="tablebodyR">-->
 
-                <!--<div class="tabletrR">-->
-                    <!--<div class="tabletdR">天津市</div>-->
-                    <!--<div class="tabletdR green">100</div>-->
-                    <!--<div class="tabletdR green">96.93</div>-->
-                    <!--<div class="jiao1 jiao1On"></div>-->
-                <!--</div>-->
+            <!--<div class="tabletrR">-->
+            <!--<div class="tabletdR">天津市</div>-->
+            <!--<div class="tabletdR green">100</div>-->
+            <!--<div class="tabletdR green">96.93</div>-->
+            <!--<div class="jiao1 jiao1On"></div>-->
+            <!--</div>-->
 
-                <!--<div class="tabletrR">-->
-                    <!--<div class="tabletdR">天津市</div>-->
-                    <!--<div class="tabletdR green">100</div>-->
-                    <!--<div class="tabletdR green">96.93</div>-->
-                    <!--<div class="jiao1 jiao1On"></div>-->
-                <!--</div>-->
+            <!--<div class="tabletrR">-->
+            <!--<div class="tabletdR">天津市</div>-->
+            <!--<div class="tabletdR green">100</div>-->
+            <!--<div class="tabletdR green">96.93</div>-->
+            <!--<div class="jiao1 jiao1On"></div>-->
+            <!--</div>-->
 
-                <!--<div class="tabletrR">-->
-                    <!--<div class="tabletdR slh1">上海</div>-->
-                    <!--<div class="tabletdR green">100</div>-->
-                    <!--<div class="tabletdR green">96.93</div>-->
-                    <!--<div class="jiao1 jiao1On"></div>-->
-                <!--</div>-->
+            <!--<div class="tabletrR">-->
+            <!--<div class="tabletdR slh1">上海</div>-->
+            <!--<div class="tabletdR green">100</div>-->
+            <!--<div class="tabletdR green">96.93</div>-->
+            <!--<div class="jiao1 jiao1On"></div>-->
+            <!--</div>-->
             <!--</div>-->
         </div>
     </div>
@@ -186,9 +186,8 @@
                     }
                 });
                 $(".tansendTime").mydatePicker({
-
-                    onSelect: function (date) {
-
+                    onSelected: function (date) {
+                        checkDate();
                     }
                 });
                 this.loadingL(initPage.params());
@@ -218,7 +217,7 @@
 
             },
             events: function () {
-                    //查询
+                //查询
                 $(".tancheck").click(function () {
                     initPage.loadingL(initPage.params());
                 })
@@ -286,7 +285,21 @@
         }
 
 
+
+
     }(jQuery));
+    var checkDate=()=>{
+        var start= $(".tansstartTime").val();
+        var end=$(".tansendTime").val();
+
+        var startsec=new Date(start).getTime();
+        var endsec=new Date(end).getTime();
+
+        if(startsec>endsec){
+            Public.alert("提示","结束时间不能小于开始时间")
+
+        }
+    }
 
 </script>
 </body>

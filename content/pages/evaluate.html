@@ -19,25 +19,25 @@
 </div>
 
 <div class="evalu">
-        <div class="evalufind">
-            <div class="evalfindTime">
-                <div class="evalfindTimeT">
-                    <div class="blueline"></div>
-                    <p>评价条件</p>
-                </div>
+    <div class="evalufind">
+        <div class="evalfindTime">
+            <div class="evalfindTimeT">
+                <div class="blueline"></div>
+                <p>评价条件</p>
+            </div>
 
-                <!--查询时间-->
-                <div class="evalfindTimeD">
-                    <div class="evaltimebox">
-                        <p class="evalstartFont">开始时间：</p>
-                        <input type="text" class="evalstartTime"  name="startTime">
-                        <p class="evalendFont">结束时间：</p>
-                        <input type="text" class="evalendTime"    name="endTime">
-                    </div>
+            <!--查询时间-->
+            <div class="evalfindTimeD">
+                <div class="evaltimebox">
+                    <p class="evalstartFont">开始时间：</p>
+                    <input type="text" class="evalstartTime"  name="startTime">
+                    <p class="evalendFont">结束时间：</p>
+                    <input type="text" class="evalendTime"    name="endTime">
                 </div>
+            </div>
 
-                <!--污染物-->
-              <form action=""  id="form1">
+            <!--污染物-->
+            <form action=""  id="form1">
                 <div class="evalwrw">
                     <div class="evalwrwbox">
                         <div class="evalwrwlist">
@@ -74,13 +74,13 @@
                         <div class="btn">评价</div>
                     </div>
                 </div>
-                </form>
-                
-            </div>
+            </form>
+
         </div>
-        <div class="evalRdata">
-            <table id="evalRdata" height="98%" width="100%" ></table>
-        </div>
+    </div>
+    <div class="evalRdata">
+        <table id="evalRdata" height="98%" width="100%" ></table>
+    </div>
 </div>
 
 
@@ -106,35 +106,38 @@
         }
 
         var initPage = {
-                loading(){
-                    $(".evalstartTime").mydatePicker({
-                        onSelected:function (date) {
-                        }
-                    });
+            loading(){
+                $(".evalstartTime").mydatePicker({
+                    onSelected:function (date) {
+                    }
+                });
 
-                    $(".evalendTime").mydatePicker({
-                        onSelected:function (date) {
-                            checkDate()
-                        }
-                    });
-                    loadTable()
-                },
-                params(){
-                      var parms=$('#form1').serializeJson();
-                      return parms;
-                },
-                events(){
-                    //点击评价
-                    $('.btn').click(function () {
+                $(".evalendTime").mydatePicker({
+                    onSelected:function (date) {
+                        checkDate()
+                    }
+                });
 
-                    })
 
-                },
-                init(){
-                    this.loading();
-                    this.events();
-                    this.params();
-                }
+                loadTable(initPage.params())
+            },
+            params(){
+                var parms=$('#form1').serializeJson();
+                parms=$.extend({"startTime":$("input[name=startTime]").val(),"endTime":$("input[name=endTime]").val()},parms)
+                return parms;
+            },
+            events(){
+                //点击评价
+                $('.btn').click(function () {
+                    loadTable(initPage.params())
+                })
+
+            },
+            init(){
+                this.loading();
+                this.events();
+                this.params();
+            }
         }
 
         $(document).ready(function () {
@@ -166,7 +169,7 @@
 
                 },
                 onClickRow:function (index, row) {
-
+                    console.log(index,row)
                 }
             });
 
@@ -178,7 +181,8 @@
             var startsec=new Date(start).getTime();
             var endsec=new Date(end).getTime();
             if(startsec>endsec){
-                Public.alert("提示","时间格式错误")
+                Public.alert("提示","结束时间不能小于开始时间")
+
             }
         }
 

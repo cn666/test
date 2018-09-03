@@ -16,7 +16,7 @@
 </style>
 <body>
 <div class="rightTop">
-    <p>天津市达标率统计</p>
+    <p >天津市达标率统计</p>
 </div>
 
 <div class="rightbottom">
@@ -60,13 +60,12 @@
                 //初始化时间插件
                 $(".startTime").mydatePicker({
                     onSelected:function (date) {
-
                     }
                 });
 
                 $(".endTime").mydatePicker({
                     onSelected:function (date) {
-                        checkDate()
+                        checkDate();
                     }
                 });
                 loadingData();
@@ -80,21 +79,22 @@
                     var endsec=new Date(end).getTime();
                     console.log(startsec,endsec)
                     if(startsec>endsec){
-                        Public.alert("提示","时间格式错误")
+                        Public.alert("提示","结束时间不的小于开始时间")
+                        return
                     }
                 }
 
             },
             params(){
-                    var startTime=$(".startTime").val();
-                    var endTime=$(".endTime").val();
-                    return {startTime,endTime}
+                var startTime=$(".startTime").val();
+                var endTime=$(".endTime").val();
+                return {startTime,endTime}
             },
             events(){
-                        //查询
-                        $('.find').click(function () {
-                            loadingData(initPage.params())
-                        })
+                //查询
+                $('.find').click(function () {
+                    loadingData(initPage.params())
+                })
 
 
             },
@@ -134,7 +134,7 @@
 
                 },
                 onClickRow:function (index, row) {
-                     parent.$("#iframe1").attr('src','pages/standardRateItem.html?id='+row.id)
+                    parent.$("#iframe1").attr('src','pages/standardRateItem.html?id='+row.id)
                 }
             });
         }

@@ -36,21 +36,21 @@
             <div class="btmloxBtoom">
 
                 <!--<div class="btmlox100">-->
-                    <!--<div class="btmloxBitem btmloxBitemOn"><span>天津国投津能发电有限公司</span>-->
-                        <!--<div class="jiao jiaoOn"></div>-->
-                    <!--</div>-->
+                <!--<div class="btmloxBitem btmloxBitemOn"><span>天津国投津能发电有限公司</span>-->
+                <!--<div class="jiao jiaoOn"></div>-->
+                <!--</div>-->
                 <!--</div>-->
 
                 <!--<div class="btmlox100">-->
-                    <!--<div class="btmloxBitem"><span>天津国投津能发电有限公司</span>-->
-                        <!--<div class="jiao"></div>-->
-                    <!--</div>-->
+                <!--<div class="btmloxBitem"><span>天津国投津能发电有限公司</span>-->
+                <!--<div class="jiao"></div>-->
+                <!--</div>-->
                 <!--</div>-->
 
                 <!--<div class="btmlox100">-->
-                    <!--<div class="btmloxBitem"><span>天津国投津能发电有限公司</span>-->
-                        <!--<div class="jiao"></div>-->
-                    <!--</div>-->
+                <!--<div class="btmloxBitem"><span>天津国投津能发电有限公司</span>-->
+                <!--<div class="jiao"></div>-->
+                <!--</div>-->
                 <!--</div>-->
             </div>
         </div>
@@ -99,7 +99,7 @@
 
         var initPage = {
             loading(){
-                Public.get(pageConfig.json.qylist,{},function (data) {
+                Public.get(pageConfig.json.qylist,{"id":urlToJson().id},function (data) {
                     var sourceHTML = template("qylist", {result:data.qylist});
                     document.querySelector(".btmloxBtoom").innerHTML = sourceHTML;
                     loadingData({qyid:data.qylist[0].qyid})
@@ -107,9 +107,9 @@
                 })
             },
             events(){
-              $('.backicon').click(function () {
-                  parent.$("#iframe1").attr('src','pages/standardRate.html')
-              })
+                $('.backicon').click(function () {
+                    parent.$("#iframe1").attr('src','pages/standardRate.html')
+                })
 
             },
             init(){

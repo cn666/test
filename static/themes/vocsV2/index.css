@@ -109,6 +109,9 @@
     border-bottom: 1px solid #D0D0D0;
     box-sizing: border-box;
 }
+.btmloxBtoom{
+    flex: 1;
+}
 
 .btmloxTbor{
     width: 43px;

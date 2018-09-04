@@ -2112,3 +2112,11 @@ table.center td, table.center td input {
     text-indent: 18px;
     height: 100%;
 }
+
+/*单行文本*/
+.slh1{
+    text-overflow:ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+

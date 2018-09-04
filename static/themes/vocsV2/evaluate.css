@@ -14,6 +14,10 @@
     padding-top: 15px;
 }
 
+.textbox{
+    height: 25px!important;
+}
+
 
 .evalfindTime {
     width: 87%;
@@ -46,7 +50,7 @@
 }
 
 .evalfindTimeD{
-    height: 21.3%;
+    height: 25.3%;
     display: flex;
     justify-content: center;
     box-sizing: border-box;
@@ -69,7 +73,7 @@
 
 .evalstartTime,.evalendTime{
     width: 100%;
-    height:18%;
+    /*height:14%;*/
 }
 .evalwrw{
     flex: 1;

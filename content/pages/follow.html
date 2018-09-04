@@ -36,6 +36,14 @@
     .mgl15{
         margin-left: 15px;
     }
+    .namefont{
+        width: 75%;
+    }
+
+    .tellbox{
+        width: 15%;
+    }
+
 </style>
 <body>
 <div class="rightTop">
@@ -77,7 +85,7 @@
         <div class="findDataRbox">
             <!--右侧顶部-->
             <div class="findDataRtop">
-                <span class="topqyname">天津国电津能热电有限公司</span>
+                <span class="topqyname slh1">天津国电津能热电有限公司</span>
                 <div class="tellbox">
                     <span class="iconTell"></span>
                     <div class="addguan">移除关注</div>
@@ -223,13 +231,13 @@
     {{each result as li i}}
     {{if i==0}}
     <div class="psnamelist bgblue"  qyid="{{li.qyid}}">
-        <div class="air"></div><span class="namefont colwhite mglr15">{{li.qyname}}</span>
+        <div class="air"></div><span class="namefont colwhite mglr15 slh1">{{li.qyname}}</span>
         <div class="icon-opt opt-delete   del" ></div>
         <div class="jiao jiaoOn"></div>
     </div>
     {{else}}
     <div class="psnamelist" qyid="{{li.qyid}}">
-        <div class="air"></div><span class="namefont mglr15" >{{li.qyname}}</span>
+        <div class="air"></div><span class="namefont mglr15 slh1" >{{li.qyname}}</span>
         <div class="icon-opt opt-delete  del "></div>
         <div class="jiao "></div>
     </div>

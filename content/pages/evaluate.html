@@ -11,6 +11,22 @@
             flex-flow: column;
             background: #EFEFEF;
         }
+
+        .datebox{
+            width: 100%;!important;
+        }
+        .textbox .textbox-text{
+            font-size: 14px;
+            line-height: 28px;
+        }
+        .textbox-icon{
+            width: 29px!important;
+            height: 27px!important;
+        }
+        .textbox .textbox-text{
+            padding-left: 5px;
+            width: 100%!important;
+        }
     </style>
 </head>
 <body>
@@ -104,16 +120,25 @@
 
         var initPage = {
             loading:function(){
-                $(".evalstartTime").mydatePicker({
-                    onSelected:function (date) {
-                    }
-                });
 
-                $(".evalendTime").mydatePicker({
-                    onSelected:function (date) {
-                        checkDate()
+
+                $('.evalstartTime').datebox({
+                    panelWidth:250,
+                    panelHeight:250,
+                });
+                $('.evalendTime').datebox({
+                    panelWidth:250,
+                    panelHeight:250,
+                    onSelect:function () {
+                        checkDate();
                     }
                 });
+                $(".datebox").height(35);
+                $(".datebox").width('100%');
+
+
+
+
 
 
                 loadTable(initPage.params())

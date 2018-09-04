@@ -1,5 +1,11 @@
 /*左侧*/
+input{
+    background: #fff;
+}
 
+.textbox-text{
+    height: 100%;
+}
 .indexleft{
     width: 15.2%;
     height: 100%;
@@ -156,6 +162,7 @@
     border: 1px solid #E4E4E4;
     margin-top: 13px;
     margin-bottom: 17px;
+
 }
 .find{
     width: 100%;

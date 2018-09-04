@@ -123,8 +123,8 @@
       <file leaf-file-name="find.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/themes/vocsV2/find.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="269" column="1" lean-forward="true" selection-start-line="269" selection-start-column="1" selection-end-line="269" selection-end-column="1" />
+            <state relative-caret-position="320">
+              <caret line="209" column="13" lean-forward="false" selection-start-line="209" selection-start-column="13" selection-end-line="209" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -453,12 +453,12 @@
       <option name="presentableId" value="Default" />
       <updated>1535945331921</updated>
       <workItem from="1535945339518" duration="6651000" />
-      <workItem from="1536023184472" duration="8610000" />
+      <workItem from="1536023184472" duration="9214000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15261000" />
+    <option name="totallyTimeSpent" value="15865000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -814,8 +814,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/themes/vocsV2/find.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="269" column="1" lean-forward="true" selection-start-line="269" selection-start-column="1" selection-end-line="269" selection-end-column="1" />
+        <state relative-caret-position="320">
+          <caret line="209" column="13" lean-forward="false" selection-start-line="209" selection-start-column="13" selection-end-line="209" selection-end-column="13" />
           <folding />
         </state>
       </provider>

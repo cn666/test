@@ -564,7 +564,8 @@ input[type="radio"] {
     width: 95%;
     height: 12.35%;
     background: #E1F3FF;
-    margin: 10px auto;
+    margin: 0 auto;
+    margin-bottom: 10px;
 }
 .alarmdataDitem input {
     background: #E1F3FF;
@@ -581,6 +582,7 @@ input[type="radio"] {
     font-size: 16px;
     color: #7A7D80;
     line-height: 34px;
+
 }
 .mg20{
     margin-left: 20px;

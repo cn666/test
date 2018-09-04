@@ -83,12 +83,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/themes/vocsV2/index.css">
+      <file leaf-file-name="standardRateItem.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/content/pages/standardRateItem.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="3" selection-end-column="1" />
-              <folding />
+            <state relative-caret-position="250">
+              <caret line="72" column="20" lean-forward="true" selection-start-line="72" selection-start-column="20" selection-end-line="72" selection-end-column="20" />
+              <folding>
+                <element signature="e#196#296#0" expanded="false" />
+                <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="e#3946#5584#0" expanded="false" />
+                <element signature="e#4066#4425#0" expanded="false" />
+                <element signature="e#4447#4806#0" expanded="false" />
+                <element signature="e#4828#5186#0" expanded="false" />
+                <element signature="e#5208#5566#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -120,11 +129,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="find.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="find.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/themes/vocsV2/find.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="209" column="13" lean-forward="false" selection-start-line="209" selection-start-column="13" selection-end-line="209" selection-end-column="13" />
+            <state relative-caret-position="420">
+              <caret line="165" column="21" lean-forward="false" selection-start-line="165" selection-start-column="21" selection-end-line="165" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -171,6 +180,7 @@
       <find>itemalarm</find>
       <find>.hisitem</find>
       <find>hisitem</find>
+      <find>jiao</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -179,7 +189,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/content/pages/standardRateItem.html" />
         <option value="$PROJECT_DIR$/static/themes/vocsV2/pub.css" />
         <option value="$PROJECT_DIR$/content/json/transTableData.json" />
         <option value="$PROJECT_DIR$/content/json/qylist.json" />
@@ -191,6 +200,7 @@
         <option value="$PROJECT_DIR$/content/pages/find.html" />
         <option value="$PROJECT_DIR$/content/pages/follow.html" />
         <option value="$PROJECT_DIR$/static/themes/vocsV2/find.css" />
+        <option value="$PROJECT_DIR$/content/pages/standardRateItem.html" />
       </list>
     </option>
   </component>
@@ -453,12 +463,12 @@
       <option name="presentableId" value="Default" />
       <updated>1535945331921</updated>
       <workItem from="1535945339518" duration="6651000" />
-      <workItem from="1536023184472" duration="9214000" />
+      <workItem from="1536023184472" duration="9902000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15865000" />
+    <option name="totallyTimeSpent" value="16553000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -560,15 +570,14 @@
         <state relative-caret-position="225">
           <caret line="17" column="6" lean-forward="false" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
           <folding>
-            <element signature="n#style#0;n#html#0;n#!!top" expanded="false" />
             <element signature="e#196#296#0" expanded="false" />
             <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="e#3749#5387#0" expanded="false" />
-            <element signature="e#3869#4228#0" expanded="false" />
-            <element signature="e#4250#4609#0" expanded="false" />
-            <element signature="e#4631#4989#0" expanded="false" />
-            <element signature="e#5011#5369#0" expanded="false" />
+            <element signature="e#3946#5584#0" expanded="false" />
+            <element signature="e#4066#4425#0" expanded="false" />
+            <element signature="e#4447#4806#0" expanded="false" />
+            <element signature="e#4828#5186#0" expanded="false" />
+            <element signature="e#5208#5566#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -629,24 +638,6 @@
         <state relative-caret-position="237">
           <caret line="23171" column="2" lean-forward="false" selection-start-line="23171" selection-start-column="2" selection-end-line="23171" selection-end-column="2" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/pages/standardRateItem.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="640">
-          <caret line="199" column="7" lean-forward="false" selection-start-line="199" selection-start-column="7" selection-end-line="199" selection-end-column="7" />
-          <folding>
-            <element signature="n#style#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="e#196#296#0" expanded="false" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="e#3749#5387#0" expanded="false" />
-            <element signature="e#3869#4228#0" expanded="false" />
-            <element signature="e#4250#4609#0" expanded="false" />
-            <element signature="e#4631#4989#0" expanded="false" />
-            <element signature="e#5011#5369#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -814,9 +805,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/themes/vocsV2/find.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="209" column="13" lean-forward="false" selection-start-line="209" selection-start-column="13" selection-end-line="209" selection-end-column="13" />
+        <state relative-caret-position="420">
+          <caret line="165" column="21" lean-forward="false" selection-start-line="165" selection-start-column="21" selection-end-line="165" selection-end-column="21" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/pages/standardRateItem.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="72" column="20" lean-forward="true" selection-start-line="72" selection-start-column="20" selection-end-line="72" selection-end-column="20" />
+          <folding>
+            <element signature="e#196#296#0" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="e#3946#5584#0" expanded="false" />
+            <element signature="e#4066#4425#0" expanded="false" />
+            <element signature="e#4447#4806#0" expanded="false" />
+            <element signature="e#4828#5186#0" expanded="false" />
+            <element signature="e#5208#5566#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

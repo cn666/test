@@ -161,9 +161,9 @@
     right:-10px;
     height: 0;
     width: 0;
-    border-top: 21px solid transparent;
+    border-top: 23px solid transparent;
     border-left: 11px solid #4EB0F1;
-    border-bottom: 21px solid transparent;
+    border-bottom: 23px solid transparent;
     float: left;
     display:none;
 }

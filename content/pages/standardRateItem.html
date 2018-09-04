@@ -13,7 +13,11 @@
         display: flex;
         flex-flow: column;
     }
-
+    .btmloxBitemspan{
+        width: 84%;
+        display: block;
+        margin: 0 auto;
+    }
 </style>
 <body>
 <div class="standup">
@@ -67,11 +71,11 @@
     {{each result as li i}}
     <div class="btmlox100"  qyid="{{li.qyid}}">
         {{if i==0 }}
-        <div class="btmloxBitem btmloxBitemOn"><span>{{li.qyname}}</span>
+        <div class="btmloxBitem btmloxBitemOn"><span class="btmloxBitemspan slh1" title="{{li.qyname}}">{{li.qyname}}</span>
             <div class="jiao jiaoOn"></div>
         </div>
         {{else}}
-        <div class="btmloxBitem "><span>{{li.qyname}}</span>
+        <div class="btmloxBitem "><span class="btmloxBitemspan slh1" title="{{li.qyname}}">{{li.qyname}}</span>
             <div class="jiao "></div>
         </div>
         {{/if}}

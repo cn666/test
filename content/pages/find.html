@@ -255,7 +255,9 @@
 </script>
 <script src="../../static/js/V2.4/base_common.js"></script>
 <script src="../../static/js/V2.4/common.min.js"></script>
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=SfzfIFZ2DMgtKsjSAmVrtgSBL5PyEKVd"></script>
+<!--<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=SfzfIFZ2DMgtKsjSAmVrtgSBL5PyEKVd"></script>-->
+<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=SfzfIFZ2DMgtKsjSAmVrtgSBL5PyEKVd&s=1"></script>
+
 <script src="../../static/js/echartV4/echarts.min.js"></script>
 <script>
     (function ($) {
@@ -309,9 +311,9 @@
         var alarmCode;  //超标报警0，超总量报警1，故障报警2
 
         var initPage = {
-            condition(){
+            condition:function(){
                 var count=0;
-                var doquery=()=>{
+                var doquery=function(){
                     if(count>=1){
                         initPage.qylist(initPage.params())
                     }
@@ -353,7 +355,7 @@
                     }
                 })
             },
-            qylist(params){
+            qylist:function(params){
                 Public.get(pageConfig.json.qylist,params,function (data) {
                     qyid=data.qylist[0].qyid;
 
@@ -392,19 +394,19 @@
                     })
                 })
             },
-            params(){
+            params:function(){
                 qyname=$('#qyname').val();
-                return {qytypeid,areaid,qyname}
+                return {qytypeid:qytypeid,areaid:qytypeid,qyname:qytypeid}
             },
-            basic(qyid){
+            basic:function(qyid){
                 //基本信息
                 Public.get(pageConfig.json.basic,{qyid:qyid},function (data) {
                     $('#basicform').form("load",data.basicData)
                 })
             },
-            historyData(qyid){
+            historyData:function(qyid){
                 //加载历史数据折线图和表格
-                let params=$.extend({qyid:qyid},initPage.historyParams());
+                var  params=$.extend({qyid:qyid},initPage.historyParams());
                 Public.get(pageConfig.json.line,params,function (data) {
 
                     var myChart = echarts.init(document.getElementById('main'))
@@ -503,12 +505,12 @@
                 })
 
             },
-            historyParams(){
-                return {jianid,dataTypeid,wrwid,jianceTimeid}
+            historyParams:function(){
+                return {jianid:jianid,dataTypeid:dataTypeid,wrwid:wrwid,jianceTimeid:jianceTimeid}
             },
-            hisConditions(qyid){
+            hisConditions:function(qyid){
                 var count=0;
-                var doquery=()=>{
+                var doquery=function(){
                     if(count>=3){
                         initPage.historyData(qyid);
                     }
@@ -588,17 +590,17 @@
                 })
             },
 
-            alarmData(qyid,alarmCode){
+            alarmData:function(qyid,alarmCode){
                 //初始化报警信息
                 //   alarmCode=0;
-                let alarmParam=$.extend({"qyid":qyid},{"alarmCode":alarmCode});
+                var  alarmParam=$.extend({"qyid":qyid},{"alarmCode":alarmCode});
                 Public.get(pageConfig.json.alarm,alarmParam,function (data) {
                     //初始化企业列表
                     var sourceHTML = template("temalarm", {result:data.data});
                     document.querySelector(".alarmdataD").innerHTML = sourceHTML;
                 })
             },
-            gis(qyid){
+            gis:function(qyid){
 
                 Public.get(pageConfig.json.gis,{"qyid":qyid},function (data) {
                     var map = new BMap.Map("mapDiv",{
@@ -613,9 +615,9 @@
 
 
             },
-            events(){
+            events:function(){
                 //查询
-                $('.tancheck').click(()=>{
+                $('.tancheck').click(function(){
                     this.qylist(this.params());
                 })
 
@@ -699,7 +701,7 @@
 
 
             },
-            init(){
+            init:function(){
                 this.condition();
                 this.events();
 

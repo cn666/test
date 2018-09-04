@@ -13,6 +13,17 @@
         flex-flow:column;
     }
 
+    .datebox{
+        width: 100%;!important;
+    }
+    .textbox .textbox-text{
+        font-size: 14px;
+        line-height: 28px;
+    }
+    .textbox-icon{
+        width: 35px!important;
+        height: 33px!important;
+    }
 </style>
 <body>
 <div class="rightTop">
@@ -29,9 +40,16 @@
 
             <div class="btmloxB">
                 <p class="stratF">开始时间：</p>
-                <input type="text" class="startTime">
+                <div style="overflow: hidden;width: 100%;height: 37px;margin-top: 13px;
+    margin-bottom: 17px;">
+                    <input type="text" class="startTime" >
+                </div>
                 <p class="endF">结束时间：</p>
-                <input type="text" class="endTime">
+                <div style="overflow: hidden;width: 100%;height: 37px;margin-top: 13px;
+    margin-bottom: 17px;">
+                    <input type="text" class="endTime">
+                </div>
+
                 <button class="find">查询</button>
             </div>
         </div>
@@ -46,6 +64,8 @@
 <script src="../../static/js/V2.4/base_common.js"></script>
 <script src="../../static/js/V2.4/common.min.js"></script>
 <script>
+
+
     (function ($) {
 
         var pageConfig = {
@@ -56,22 +76,40 @@
         }
 
         var initPage = {
-            loading(){
+            loading:function(){
                 //初始化时间插件
-                $(".startTime").mydatePicker({
-                    onSelected:function (date) {
-                    }
-                });
 
-                $(".endTime").mydatePicker({
-                    onSelected:function (date) {
-                        checkDate();
-                    }
+//                $(".startTime").mydatePicker({
+//                    onSelected:function (date) {
+//
+//                    }
+//                });
+
+                $('.startTime').datebox({
+                    panelWidth:250,
+                    panelHeight:250,
                 });
+                $('.endTime').datebox({
+                    panelWidth:250,
+                    panelHeight:250,
+                });
+                $(".datebox").height(35);
+                $(".datebox").width('100%');
+
+
+//                $('.endTime').calendar({
+//                    current:new Date()
+//                });
+//                $(".endTime").mydatePicker({
+//                    onSelected:function (date) {
+//                        checkDate();
+//
+//                    }
+//                });
                 loadingData();
 
 
-                var checkDate=()=>{
+                var checkDate=function(){
                     var start= $(".startTime").val();
                     var end=$(".endTime").val();
 
@@ -85,12 +123,12 @@
                 }
 
             },
-            params(){
+            params:function(){
                 var startTime=$(".startTime").val();
                 var endTime=$(".endTime").val();
-                return {startTime,endTime}
+                return {startTime:startTime,endTime:endTime}
             },
-            events(){
+            events:function(){
                 //查询
                 $('.find').click(function () {
                     loadingData(initPage.params())
@@ -98,7 +136,7 @@
 
 
             },
-            init(){
+            init:function(){
                 this.loading();
                 this.events();
             }
@@ -109,7 +147,7 @@
             initPage.init();
         });
 
-        var loadingData=params=>{
+        var loadingData=function(params){
             $('#tt').datagrid({
                 method: "GET",
                 url:pageConfig.json.standDatagrid,
@@ -139,6 +177,8 @@
             });
         }
     }(jQuery));
+
+
 </script>
 </body>
 </html>

@@ -91,9 +91,6 @@
 
 
 
-
-
-
     (function ($) {
 
         var pageConfig = {
@@ -106,7 +103,7 @@
         }
 
         var initPage = {
-            loading(){
+            loading:function(){
                 $(".evalstartTime").mydatePicker({
                     onSelected:function (date) {
                     }
@@ -121,19 +118,19 @@
 
                 loadTable(initPage.params())
             },
-            params(){
+            params:function(){
                 var parms=$('#form1').serializeJson();
                 parms=$.extend({"startTime":$("input[name=startTime]").val(),"endTime":$("input[name=endTime]").val()},parms)
                 return parms;
             },
-            events(){
+            events:function(){
                 //点击评价
                 $('.btn').click(function () {
                     loadTable(initPage.params())
                 })
 
             },
-            init(){
+            init:function(){
                 this.loading();
                 this.events();
                 this.params();
@@ -146,7 +143,7 @@
 
 
         //加载表格
-        var  loadTable=params=>{
+        var  loadTable=function(params){
             $('#evalRdata').datagrid({
                 method: "GET",
                 url: pageConfig.json.evaluateData,
@@ -175,14 +172,14 @@
 
         }
 
-        var checkDate=()=>{
+        var checkDate=function(){
             var start= $(".evalstartTime").val();
             var end=$(".evalendTime").val();
             var startsec=new Date(start).getTime();
             var endsec=new Date(end).getTime();
             if(startsec>endsec){
                 Public.alert("提示","结束时间不能小于开始时间")
-
+                return
             }
         }
 

@@ -2172,7 +2172,8 @@
 }
 
 .datebox .combo-arrow {
-    background-image: url('ui-images/datebox_arrow.png');
+    /*background-image: url('ui-images/datebox_arrow.png');*/
+    background-image: url('ui-images/dateicon.png');
     background-position: center center
 }
 

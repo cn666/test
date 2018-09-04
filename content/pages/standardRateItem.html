@@ -83,7 +83,7 @@
 <script>
     (function ($) {
 
-        console.log(urlToJson())
+        //console.log(urlToJson())
 
 
         var pageConfig = {
@@ -98,7 +98,7 @@
         }
 
         var initPage = {
-            loading(){
+            loading:function(){
                 Public.get(pageConfig.json.qylist,{"id":urlToJson().id},function (data) {
                     var sourceHTML = template("qylist", {result:data.qylist});
                     document.querySelector(".btmloxBtoom").innerHTML = sourceHTML;
@@ -106,13 +106,13 @@
                     qyclick()
                 })
             },
-            events(){
+            events:function(){
                 $('.backicon').click(function () {
                     parent.$("#iframe1").attr('src','pages/standardRate.html')
                 })
 
             },
-            init(){
+            init:function(){
                 this.loading();
                 this.events()
             }
@@ -124,7 +124,7 @@
             initPage.init();
         });
 
-        var loadingData=params=>{
+        var loadingData=function(params){
             $('#tt').datagrid({
                 method: "GET",
                 url: pageConfig.json.wrwData,
@@ -180,7 +180,7 @@
 
 
 
-        var qyclick=()=>{
+        var qyclick=function(){
             // 切换企业列表 并刷新右侧数据
             $('.btmlox100').click(function (e) {
                 $(this).children('.btmloxBitem').addClass('btmloxBitemOn')
@@ -188,7 +188,7 @@
                 $(this).find('.jiao').addClass('jiaoOn')
                 $(this).siblings().find('.jiao').removeClass('jiaoOn')
                 var qyid=$(this).attr('qyid')
-                loadingData({qyid})
+                loadingData({qyid:qyid})
             })
         }
 

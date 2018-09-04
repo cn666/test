@@ -192,7 +192,7 @@
                 });
                 this.loadingL(initPage.params());
             },
-            loadingL(params){
+            loadingL:function(params){
                 //加载左侧
                 Public.get(pageConfig.json.transmissData,params,function (data) {
                     var sourceHTML = template("leftlist", {result:data.result});
@@ -205,18 +205,18 @@
                         $(this).find(".jiao1").addClass('jiao1On');
                         $(this).siblings().find(".jiao1").removeClass('jiao1On');
                         var areaid=$(this).attr('areaid')
-                        loadingR({areaid})
+                        loadingR({areaid:areaid})
                     })
                 })
 
             },
-            params(){
+            params:function(){
                 var startTime=$('.tansstartTime').val();
                 var endTime=$('.tansendTime').val()
-                return {startTime,endTime}
+                return {startTime:startTime,endTime:endTime}
 
             },
-            events: function () {
+            events:function () {
                 //查询
                 $(".tancheck").click(function () {
                     initPage.loadingL(initPage.params());
@@ -235,7 +235,7 @@
         });
 
 
-        var loadingR=params=>{
+        var loadingR=function(params){
             $('#tablh').datagrid({
                 method: "GET",
                 url: pageConfig.json.transTableData,
@@ -255,7 +255,7 @@
                     {
                         title: '当日传输有效率%',
                         field: 'f2',
-                        width: $(this).width() * 0.05,
+                        width: $(this).width() * 0.06,
                         align: 'center',
                         formatter: function (value, row, index) {
                             return '<span style="color: #FF534C">' + value + '</span>'
@@ -264,7 +264,7 @@
                     {
                         title: '累计传输有效率%',
                         field: 'f3',
-                        width: $(this).width() * 0.05,
+                        width: $(this).width() * 0.06,
                         align: 'center',
                         formatter: function (value, row, index) {
                             return '<span style="color: #33AB18">' + value + '</span>'
@@ -288,7 +288,7 @@
 
 
     }(jQuery));
-    var checkDate=()=>{
+    var checkDate=function(){
         var start= $(".tansstartTime").val();
         var end=$(".tansendTime").val();
 
